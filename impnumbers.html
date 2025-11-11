@@ -1,256 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/Navbar.css" />
-    <link rel="stylesheet" href="./styles/Homepage.css" />
-    <link rel="stylesheet" href="./styles/Footer.css" />
-    <link rel="stylesheet" href="./styles/impnumbers.css" />
-    <link rel="stylesheet" href="./styles/PopupLogo.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>महत्वाचे नंबर</title>
 
-  <body>
-    <!-- Your existing HTML content -->
-    <!-- Top Bar -->
-    <div class="top-bar">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6 top-bar-left">
-            महाराष्ट्र शासन | GOVERNMENT OF MAHARASHTRA
-          </div>
-          <div
-            class="col-md-6 d-flex justify-content-end align-items-center gap-3 flex-wrap top-bar-right"
-          >
-            <span class="email-text">
-              <i class="fas fa-envelope"></i>
-              wadegaon.stegp@rediffmail.com
-            </span>
-            <div id="google_translate_element"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="styles/impnumbers.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="styles/Navbar.css">
+    <link rel="stylesheet" href="styles/PopupLogo.css">
+    
+    <!-- Dropdown Fix CSS -->
+    <style>
+ /* Dropdown Menu Fixes */
+        .navbar-nav .dropdown-menu {
+            background-color: #171b47;
+            border: none;
+            border-radius: 0;
+            margin-top: 0;
+        }
 
-    <!-- Logo Header -->
-    <div class="logo-header">
-      <div class="container">
-        <div class="d-flex align-items-center">
-          <img
-            src="./Img/main_logo.jpeg"
-            alt="ग्रामपंचायत लोगो"
-            class="logo me-3"
-          />
-          <h2 class="mb-0 marathi-font text-warning">
-            वडेगाव(स्टेशन) ग्रामपंचायत
-          </h2>
-        </div>
-      </div>
-    </div>
+        .navbar-nav .dropdown-item {
+            color: white;
+            padding: 10px 20px;
+            border-bottom: 1px solid #171b47;
+        }
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark nav-bar">
-      <div class="container">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        .navbar-nav .dropdown-item:hover {
+            background-color: #171b47;
+            color: white;
+        }
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav nav-main-container">
-            <li class="nav-item">
-              <a class="nav-link active" href="./">
-                <i class="fas fa-home"></i> मुखपृष्ठ
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="./members.html">
-                <i class="fas fa-users"></i> पदाधिकारी
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="./villageinfo.html">
-                <i class="fas fa-info-circle"></i> गावाची माहिती
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./impnumbers.html">
-                <i class="fas fa-phone-alt"></i> महत्वाचे नंबर
-              </a>
-            </li>
-            <!-- शासकीय योजना Dropdown -->
-            <li class="nav-item dropdown d-flex align-items-center">
-              <a
-                class="nav-link text-white fw-semibold hover-link text-white"
-                href="./fifteen.html"
-              >
-                <i class="fa-solid fa-landmark text-white"></i>
-                शासकीय योजना
-              </a>
-              <a
-                class="nav-link dropdown-toggle text-primary fw-semibold"
-                href="./fifteen.html"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              ></a>
-              <ul class="dropdown-menu dropdown-menu-custom">
-                <li>
-                  <a
-                    class="dropdown-item dropdown-item-custom"
-                    href="./fifteen.html"
-                    >१५ वित्त आयोग</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item dropdown-item-custom"
-                    href="./jaljeevan.html"
-                    >जल जीवन मिशन</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item dropdown-item-custom"
-                    href="./pmyojna.html"
-                    >प्रधान मंत्री आवास योजना</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item dropdown-item-custom"
-                    href="./mgandhi.html"
-                    >महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार हमी योजना</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item dropdown-item-custom"
-                    href="./tandavasti.html"
-                    >तांडा/वस्ती योजना</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item dropdown-item-custom"
-                    href="./scneo.html"
-                    >अनुसूचीत जाती व नवबौध्द विकास</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item dropdown-item-custom"
-                    href="./ramaiyojna.html"
-                    >रमाई आवास योजना</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item dropdown-item-custom"
-                    href="./shabriyojna.html"
-                    >शबरी आदिवासी घरकुल योजना</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <!-- लाभार्थी रजिस्टर Dropdown -->
-            <li class="nav-item dropdown d-flex align-items-center">
-              <a
-                class="nav-link text-white fw-semibold text-white px-2 hover-link"
-                href="./pmlabh.html"
-              >
-                <i class="fa-solid fa-users-line text-white"></i>
-                लाभार्थी रजिस्टर
-              </a>
-              <a
-                class="nav-link dropdown-toggle text-primary fw-semibold px-1"
-                href="./pmlabh.html"
-                id="navbarDropdown2"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              ></a>
-              <ul class="dropdown-menu dropdown-menu-custom">
-                <li>
-                  <a
-                    class="dropdown-item dropdown-item-custom"
-                    href="./pmlabh.html"
-                    >प्रधानमंत्री आवास योजना</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item dropdown-item-custom"
-                    href="./shabrilabh.html"
-                    >शबरी आवास योजना</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item dropdown-item-custom"
-                    href="./ramailabh.html"
-                    >रमाई आवास योजना</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="./services.html">
-                <i class="fas fa-user-check"></i> नागरिकांसाठी सेवा
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="./taxcollect.html">
-                <i class="fas fa-money-bill-wave"></i> कर संकलन
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./complaint.html">
-                <i class="fas fa-comments"></i> तक्रार द्या
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+        .navbar-nav .dropdown-toggle::after {
+            margin-left: 5px;
+        }
 
-    <!-- Marquee -->
-    <div class="marquee">
-      <div class="container">
-        <marquee behavior="scroll" direction="left">
-          <i class="fas fa-bullhorn me-2"></i>
-          ग्रामपंचायत मध्ये स्वच्छता अभियान चालू आहे. सर्व नागरिकांनी सहभागी
-          व्हावे.
-        </marquee>
-      </div>
-    </div>
 
-    <!-- Notification -->
-    <div
-      class="alert alert-warning d-flex align-items-center justify-content-center mb-0 rounded-0"
-      data-aos="fade-down"
-    >
-      <i class="fas fa-exclamation-circle me-2 fs-4"></i>
-      <strong>महत्वाची सूचना :</strong> नवीन जन्म नोंदणी प्रक्रिया ऑनलाईन सुरू
-      झाली आहे.
-    </div>
+        /* Mobile Dropdown Fix */
+        @media (max-width: 991px) {
+            .navbar-nav .dropdown-menu {
+                padding-left: 15px;
+            }
+        }
+    </style>
+
+    <!-- External Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header-placeholder"></div>
 
     <!-- Main Content Area -->
     <div class="contacts-search-container" id="searchContainer">
@@ -300,7 +105,7 @@
 
     <div class="container my-5">
       <h2 class="section-subtitle mb-3" data-aos="fade-right">
-        महत्वाचे संपर्क — गोंदिया जिल्हा
+        महत्वाचे संपर्क — रायगड
       </h2>
 
       <!-- Toll Free Helplines -->
@@ -468,628 +273,317 @@
       </section>
     </div>
 
+    <!-- Footer will be loaded here -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script>
-      // Initialize AOS
-      document.addEventListener("DOMContentLoaded", function () {
-        if (typeof AOS !== "undefined") {
-          AOS.init({
-            duration: 1000,
-            once: false,
-            easing: "ease-in-out",
-          });
+        // Function to load HTML components
+        async function loadComponent(elementId, filePath) {
+            try {
+                const response = await fetch(filePath);
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${filePath}: ${response.status}`);
+                }
+                const html = await response.text();
+                document.getElementById(elementId).innerHTML = html;
+                
+                // Initialize dropdowns after loading header
+                if (elementId === 'header-placeholder') {
+                    setTimeout(initializeDropdowns, 100);
+                }
+                
+                // Initialize AOS after loading content
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({
+                        duration: 1000,
+                        once: true,
+                        easing: "ease-in-out",
+                    });
+                }
+                
+                return true;
+            } catch (error) {
+                document.getElementById(elementId).innerHTML = `
+                    <div class="alert alert-warning text-center">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        ${filePath} लोड करताना त्रुटी आली. कृपया पृष्ठ रीफ्रेश करा.
+                    </div>
+                `;
+                return false;
+            }
         }
 
-        // Data arrays
-        const colleges = [
-          {
-            sr: 1,
-            name: "शासकीय पॉलिटेक्निक कॉलेज गोंदिया",
-            contact: "07182-235140",
-            address: "फुलचूर पेठ, गोरेगाव रोड, गोंदिया. 441601",
-          },
-          {
-            sr: 2,
-            name: "शासकीय वैद्यकीय महाविद्यालय गोंदिया",
-            contact: "07182-238098",
-            address: "इंदिरा गांधी स्टेडियमजवळ, नेहरू चौक, गोंदिया",
-          },
-        ];
+        // Initialize dropdown functionality
+        function initializeDropdowns() {
+            // Re-initialize Bootstrap dropdowns
+            const dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+            const dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+                return new bootstrap.Dropdown(dropdownToggleEl);
+            });
+        }
 
-        const municipalities = [
-          {
-            sr: 3,
-            name: "नगर परिषद, गोंदिया",
-            contact: "07182-237060",
-            address: "गांधी चौक, गोंदिया - 441601",
-          },
-          {
-            sr: 4,
-            name: "नगर परिषद, तिरोदा",
-            contact: "07198-254060",
-            address: "शहीद मिश्रा वॉर्ड, न्यायालयाच्या समोर, तिरोदा - 441911",
-          },
-        ];
-
-        const hospitals = [
-          {
-            sr: 5,
-            name: "बीजीडब्ल्यू महिला जिल्हा रुग्णालय",
-            contact: "07182-237033",
-            address: "नेहरू चौक, गोंदिया - 441601",
-          },
-          {
-            sr: 6,
-            name: "कुवर तिलक सिंग (KTS) जिल्हा रुग्णालय",
-            contact: "07182-234130",
-            address: "नेहरू चौक, गोंदिया - 441601",
-          },
-          { sr: 7, name: "अमगाव", contact: "07189-225157", address: "अमगाव" },
-          {
-            sr: 8,
-            name: "अर्जुनी मौरगाव",
-            contact: "07196-220166",
-            address: "अर्जुनी मौरगाव",
-          },
-          { sr: 9, name: "चिचगड", contact: "07199-224125", address: "चिचगड" },
-          { sr: 10, name: "चिचगड", contact: "07199-225222", address: "देवरी" },
-          {
-            sr: 11,
-            name: "गोरेगाव",
-            contact: "07187-232334",
-            address: "गोरेगाव",
-          },
-          {
-            sr: 12,
-            name: "नावेगाव/बांध",
-            contact: "07196-228007",
-            address: "नावेगाव/बांध",
-          },
-          {
-            sr: 13,
-            name: "राजेगाव",
-            contact: "07182-270449",
-            address: "राजेगाव",
-          },
-          {
-            sr: 14,
-            name: "सडक अर्जुनी",
-            contact: "07199-233239",
-            address: "सडक अर्जुनी",
-          },
-          {
-            sr: 15,
-            name: "सालेकसा",
-            contact: "07180-244181",
-            address: "सालेकसा",
-          },
-          { sr: 16, name: "सौंडाड", contact: "0799-232199", address: "सौंडाड" },
-          {
-            sr: 17,
-            name: "उप-विभागीय रुग्णालय, तिरोदा",
-            contact: "07198-254118",
-            address: "तिरोदा",
-          },
-        ];
-
-        const electricity = [
-          {
-            sr: 18,
-            name: "सर्कल ऑफिस गोंदिया",
-            contact: "07182-253240",
-            address: "ओल्ड पॉवर हाऊस, राम नगर, गोंदिया",
-          },
-          {
-            sr: 19,
-            name: "विभाग, देवरी",
-            contact: "07199-225352",
-            address: "BDCC बँकजवळ, राष्ट्रीय महामार्ग, देवरी",
-          },
-          {
-            sr: 20,
-            name: "विभाग, गोंदिया",
-            contact: "07182-253336",
-            address: "ओल्ड पॉवर हाऊस, राम नगर, गोंदिया",
-          },
-          {
-            sr: 21,
-            name: "उप-विभाग, अमगाव",
-            contact: "07189-225273",
-            address: "अग्रवाल कॉम्प्लेक्स, सीमा टॉकीजजवळ, मुख्य रोड, अमगाव",
-          },
-          {
-            sr: 22,
-            name: "उप-विभाग, देवरी",
-            contact: "07199-225252",
-            address: "जैन मंदिरजवळ, राष्ट्रीय महामार्ग, देवरी",
-          },
-          {
-            sr: 23,
-            name: "उप-विभाग, गोंदिया ग्रामीण",
-            contact: "07182-251289",
-            address: "सूर्यातोला पॉवर हाऊस, गोंदिया",
-          },
-          {
-            sr: 24,
-            name: "उप-विभाग, गोंदिया शहरी",
-            contact: "07182-233473",
-            address: "सूर्यातोला पॉवर हाऊस, गोंदिया",
-          },
-          {
-            sr: 25,
-            name: "उप-विभाग, गोरेगाव",
-            contact: "07187-232341",
-            address: "टेडा रोड, गोरेगाव",
-          },
-          {
-            sr: 26,
-            name: "उप-विभाग, सडक अर्जुनी",
-            contact: "07199-233028",
-            address: "GDCC बँकजवळ, कोहामारा, सडक अर्जुनी",
-          },
-          {
-            sr: 27,
-            name: "उप-विभाग, सालेकसा",
-            contact: "07180-225490",
-            address: "सालेकसा बस स्टॉपजवळ, पंचायत समिती इमारतीसमोर, सालेकसा",
-          },
-          {
-            sr: 28,
-            name: "उप-विभाग, तिरोदा",
-            contact: "07198-254068",
-            address: "ओल्ड पॉवर हाऊस, तहसील ऑफिसजवळ, तिरोदा",
-          },
-          {
-            sr: 29,
-            name: "झोनल ऑफिस गोंदिया",
-            contact: "07182-253101",
-            address: "ओल्ड पॉवर हाऊस, राम नगर, गोंदिया",
-          },
-          {
-            sr: 30,
-            name: "उप-विभाग, अर्जुनी मौरगाव",
-            contact: "07196-220339",
-            address: "शशिकांत चौरसिया, SBI बँकजवळ, सांगाडी रोड, अर्जुनी मौरगाव",
-          },
-        ];
-
-        const postal = [
-          {
-            sr: 31,
-            name: "अमगाव",
-            contact: "07189-225221",
-            address: "अमगाव-441902",
-          },
-          {
-            sr: 32,
-            name: "अर्जुनी मौरगाव",
-            contact: "07196-220121",
-            address: "अर्जुनी मौरगाव-441701",
-          },
-          {
-            sr: 33,
-            name: "देवरी (गोंदिया)",
-            contact: "07199-225121",
-            address: "देवरी-441901",
-          },
-          {
-            sr: 34,
-            name: "गोंदिया बाजार",
-            contact: "07182-222102",
-            address: "गोंदिया बाजार-441601",
-          },
-          {
-            sr: 35,
-            name: "गोंदिया शहर",
-            contact: "07182-252215",
-            address: "गोंदिया शहर-441614",
-          },
-          {
-            sr: 36,
-            name: "गोंदिया मुख्यालय",
-            contact: "07182-223080",
-            address: "गोंदिया-441601",
-          },
-          {
-            sr: 37,
-            name: "नावेगाव बांध",
-            contact: "07196-228021",
-            address: "नावेगाव बांध-441702",
-          },
-          {
-            sr: 38,
-            name: "सडक अर्जुनी",
-            contact: "07199-233221",
-            address: "सडक अर्जुनी-441807",
-          },
-          {
-            sr: 39,
-            name: "सालेकसा",
-            contact: "07189-244122",
-            address: "सालेकसा-441916",
-          },
-          {
-            sr: 40,
-            name: "सौंडाड",
-            contact: "07199-232121",
-            address: "सौंडाड-441806",
-          },
-          {
-            sr: 41,
-            name: "तिरोरा",
-            contact: "07198-254023",
-            address: "तिरोरा-441911",
-          },
-        ];
-
-        const banks = [
-          {
-            sr: 42,
-            name: "बँक ऑफ बडोदा",
-            contact: "07182-252720",
-            address: "रेलटॉली, गोंदिया",
-          },
-          {
-            sr: 43,
-            name: "बँक ऑफ इंडिया",
-            contact: "07182-251305",
-            address: "कौशल्या निकेतन, वल्लभभाई वॉर्ड, रेल टॉली, गोंदिया",
-          },
-          {
-            sr: 44,
-            name: "कॅनरा बँक",
-            contact: "07182-233772",
-            address: "पांडे राइस मिल हाऊस, जुना बस स्टँड रोड, गोंदिया",
-          },
-          {
-            sr: 45,
-            name: "डीना बँक",
-            contact: "07182-222006",
-            address: "अंसारी वॉर्ड, खोजा मशिद SS गर्ल्स कॉलेज रोड, गोंदिया",
-          },
-          {
-            sr: 46,
-            name: "इंडियन ओव्हरसीज बँक",
-            contact: "07182-231251",
-            address: "गुरुनानक वॉर्ड, गोंदिया",
-          },
-          {
-            sr: 47,
-            name: "पंजाब नॅशनल बँक",
-            contact: "07182-222066",
-            address: "प्रभात टॉकीजजवळ, गोंदिया",
-          },
-          {
-            sr: 48,
-            name: "पंजाब नॅशनल बँक (MIET)",
-            contact: "07182-252041",
-            address: "MIET कॉलेज, गोंदिया",
-          },
-          {
-            sr: 49,
-            name: "स्टेट बँक ऑफ इंडिया",
-            contact: "07182-231524",
-            address: "आग्रसेन भवन रोड, गोंदिया",
-          },
-          {
-            sr: 50,
-            name: "स्टेट बँक ऑफ इंडिया (रेलटॉली)",
-            contact: "07182-223093",
-            address: "रेलटॉली, गोंदिया",
-          },
-          {
-            sr: 51,
-            name: "यूको बँक",
-            contact: "07182-2252871",
-            address: "गांधी मार्केट, रेल टॉली रोड, गोंदिया",
-          },
-          {
-            sr: 52,
-            name: "युनियन बँक ऑफ इंडिया",
-            contact: "07182-251857",
-            address:
-              "सौ. सुभदेवी बोपचे भवन, तिलक वॉर्ड, पूनाटोली, बालाघाट रोड, गोंदिया",
-          },
-        ];
-
-        const medicalContacts = [
-          {
-            sr: 1,
-            taluka: "गोंदिया",
-            hospital: "KTS रुग्णालय, गोंदिया",
-            incharge: "डा. बी. डी. जैसवाल",
-            contact: "9423470974",
-          },
-          {
-            sr: 2,
-            taluka: "गोंदिया",
-            hospital: "MS आयुर्वेदिक कॉलेज, गोंदिया",
-            incharge: "डा. अविनाश येर्ने",
-            contact: "9766950662",
-          },
-          {
-            sr: 3,
-            taluka: "तिरोरा",
-            hospital: "उप जिल्हा रुग्णालय, तिरोरा",
-            incharge: "डा. एच. मेश्राम",
-            contact: "9975736319",
-          },
-          {
-            sr: 4,
-            taluka: "गोंदिया",
-            hospital: "शासकीय वैद्यकीय महाविद्यालय, गोंदिया",
-            incharge: "डा. अशिष लोटे",
-            contact: "9730753151",
-          },
-          {
-            sr: 5,
-            taluka: "गोंदिया",
-            hospital: "सेंट्रल हॉस्पिटल, गोंदिया",
-            incharge: "डा. एल. एल. बजाज, धिरज बी. वासेकर",
-            contact: "9823252700",
-          },
-          {
-            sr: 6,
-            taluka: "गोंदिया",
-            hospital: "सहयोग रुग्णालय",
-            incharge: "-",
-            contact: "8888001426",
-          },
-          {
-            sr: 7,
-            taluka: "गोंदिया",
-            hospital: "बहेकर मल्टीस्पेशॅलिटी आणि रिसर्च सेंटर",
-            incharge: "डा. दीपक बहेकर, नेहा साटदेवे",
-            contact: "9370711255, 8007762849",
-          },
-          {
-            sr: 8,
-            taluka: "गोंदिया",
-            hospital: "श्री राधा कृष्ण हॉस्पिटल",
-            incharge: "डा. पी. गिरी, आनंद कटरे",
-            contact: "9403130084, 9689237010",
-          },
-          {
-            sr: 9,
-            taluka: "गोंदिया",
-            hospital: "KMJ रुग्णालय",
-            incharge: "डा. अमित जैसवाल",
-            contact: "9922876476",
-          },
-          {
-            sr: 10,
-            taluka: "गोंदिया",
-            hospital: "गायत्री हॉस्पिटल",
-            incharge: "डा. संजय येडे",
-            contact: "9822459270",
-          },
-          {
-            sr: 11,
-            taluka: "गोंदिया",
-            hospital: "आयुष क्रिटिकल केअर हॉस्पिटल",
-            incharge: "डा. जितेंद्र गुप्ता",
-            contact: "07182-252200",
-          },
-          {
-            sr: 12,
-            taluka: "तिरोरा",
-            hospital: "धुर्वे हॉस्पिटल",
-            incharge: "डा. अमोल धुर्वे",
-            contact: "9970878423",
-          },
-          {
-            sr: 13,
-            taluka: "तिरोरा",
-            hospital: "दुबे हॉस्पिटल",
-            incharge: "डा. निकेश दुबे",
-            contact: "9730761874",
-          },
-          {
-            sr: 14,
-            taluka: "तिरोरा",
-            hospital: "दया हॉस्पिटल",
-            incharge: "डा. संदीप मेश्राम",
-            contact: "9529478936",
-          },
-          {
-            sr: 15,
-            taluka: "गोंदिया",
-            hospital: "हीलिंग हँड हॉस्पिटल",
-            incharge: "डा. व्ही. मोहाबे",
-            contact: "8275298630",
-          },
-          {
-            sr: 16,
-            taluka: "गोंदिया",
-            hospital: "अनन्या हॉस्पिटल",
-            incharge: "डा. प्रशांत मेश्राम",
-            contact: "7517696862",
-          },
-          {
-            sr: 17,
-            taluka: "गोंदिया",
-            hospital: "गोंदिया सिटी हॉस्पिटल",
-            incharge: "डा. संजय अग्रवाल",
-            contact: "9923433828",
-          },
-          {
-            sr: 18,
-            taluka: "गोंदिया",
-            hospital: "राणी अवंती हॉस्पिटल",
-            incharge: "डा. श्वेता महुले",
-            contact: "9830706766, 9404212683",
-          },
-          {
-            sr: 19,
-            taluka: "अमगाव",
-            hospital: "सिद्धिविनायक हॉस्पिटल, अमगाव",
-            incharge: "डा. पियुष पांडे",
-            contact: "9356680335",
-          },
-          {
-            sr: 20,
-            taluka: "गोंदिया",
-            hospital: "एपिओन हॉस्पिटल, गोंदिया",
-            incharge: "डा. अभिषेक भालोटिया",
-            contact: "9960746354",
-          },
-        ];
-
-        const oddopGrievanceContacts = [
-          {
-            srNo: 1,
-            name: "श्री. प्रजित नायर (I.A.S.)",
-            designation: "जिल्हा कलेक्टर व मजिस्ट्रेट",
-            contact: "07182-236149",
-          },
-          {
-            srNo: 2,
-            name: "श्री. सारंग पाटले",
-            designation: "जनरल मॅनेजर, DIC",
-            contact: "9970423843",
-          },
-          {
-            srNo: 3,
-            name: "श्री. हिंदुराव चव्हाण",
-            designation: "DSAO",
-            contact: "07182-230373",
-          },
-          {
-            srNo: 4,
-            name: "श्री. अजीत आदसुले",
-            designation: "प्रोजेक्ट डायरेक्टर (ATMA)",
-            contact: "9637252719",
-          },
-          {
-            srNo: 5,
-            name: "श्री. पंकज गजभिये",
-            designation: "DIO, गोंदिया",
-            contact: "07182-234404",
-          },
-          {
-            srNo: 6,
-            name: "श्री. रमन पाटील",
-            designation: "मॅनेजर, DIC",
-            contact: "9881867787",
-          },
-          {
-            srNo: 7,
-            name: "सुश्री. मीनाक्षी बागडे",
-            designation: "EY कन्सल्टंट",
-            contact: "7972692098",
-          },
-        ];
-
-        // DOM Elements
-        const searchInput = document.getElementById("searchInput");
-        const clearSearch = document.getElementById("clearSearch");
-        const searchResults = document.getElementById("searchResults");
-        const searchResultsList = document.getElementById("searchResultsList");
-        const noResults = document.getElementById("noResults");
-        const noResultsText = document.getElementById("noResultsText");
-        const searchResultsTitle =
-          document.getElementById("searchResultsTitle");
-        const closeResults = document.getElementById("closeResults");
-        const searchContainer = document.getElementById("searchContainer");
-
-        // Combine all data for search
-        const allContacts = [];
-
-        // Add all data arrays with proper categorization
-        colleges.forEach((item) =>
-          allContacts.push({
-            ...item,
-            category: "महाविद्यालये",
-            type: "educational",
-          })
-        );
-        municipalities.forEach((item) =>
-          allContacts.push({
-            ...item,
-            category: "नगरपालिका",
-            type: "government",
-          })
-        );
-        hospitals.forEach((item) =>
-          allContacts.push({ ...item, category: "रुग्णालये", type: "medical" })
-        );
-        electricity.forEach((item) =>
-          allContacts.push({ ...item, category: "वीज", type: "utility" })
-        );
-        postal.forEach((item) =>
-          allContacts.push({ ...item, category: "पोस्ट", type: "government" })
-        );
-        banks.forEach((item) =>
-          allContacts.push({ ...item, category: "बँका", type: "financial" })
-        );
-        medicalContacts.forEach((item) =>
-          allContacts.push({
-            ...item,
-            category: "वैद्यकीय संपर्क",
-            type: "medical",
-          })
-        );
-        oddopGrievanceContacts.forEach((item) =>
-          allContacts.push({
-            ...item,
-            category: "ODOP तक्रार",
-            type: "government",
-          })
-        );
-
-        // Initial render of tables
-        renderTables();
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load header and footer
+            loadComponent('header-placeholder', 'Includes/header.html');
+            loadComponent('footer-placeholder', 'Includes/footer.html');
+            
+            // Initialize AOS for main content
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 1000,
+                    once: true,
+                    easing: "ease-in-out",
+                });
+            }
+            
+            // Initialize search functionality
+            initializeSearchFunctionality();
+        });
 
         // Search functionality
-        function handleSearch(e) {
-          const searchTerm = e.target.value;
+        function initializeSearchFunctionality() {
+            // Data arrays
+            const colleges = [
+                {
+                    sr: 1,
+                    name: "वसंतराव नाईक आर्ट्स अँड कॉमर्स कॉलेज",
+                    contact: "02149-232040",
+                    address: "आत-पोस्ट व तालुका – म्हसळा, जिल्हा रायगड, पिन – 402105",
+                },
+                {
+                    sr: 2,
+                    name: "डी. एस. सी. कॉलेज, मुरुड-जंजीरा",
+                    contact: "02144-274310",
+                    address: "मुरुड-जंजीरा, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
+                },
+                {
+                    sr: 3,
+                    name: "एस. एम. कॉलेज, अलिबाग",
+                    contact: "02141-222123",
+                    address: "अलिबाग, जिल्हा रायगड, महाराष्ट्र - 402201",
+                },
+            ];
 
-          if (searchTerm.trim() === "") {
-            searchResults.style.display = "none";
-            clearSearch.style.display = "none";
-            return;
-          }
+            const municipalities = [
+                {
+                    sr: 1,
+                    name: "मुरुड नगरपरिषद",
+                    contact: "02144-274032",
+                    address: "मुरुड-जंजीरा, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
+                },
+                {
+                    sr: 2,
+                    name: "अलिबाग नगरपरिषद",
+                    contact: "02141-222388",
+                    address: "अलिबाग, जिल्हा रायगड, महाराष्ट्र - 402201",
+                },
+            ];
 
-          clearSearch.style.display = "block";
+            const hospitals = [
+                {
+                    sr: 1,
+                    name: "उप जिल्हा रुग्णालय, मुरुड",
+                    contact: "02144-274420",
+                    address: "मुरुड-जंजीरा, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
+                },
+                {
+                    sr: 2,
+                    name: "जिल्हा रुग्णालय, अलिबाग",
+                    contact: "02141-222081",
+                    address: "अलिबाग, जिल्हा रायगड, महाराष्ट्र - 402201",
+                },
+            ];
 
-          const results = allContacts.filter(
-            (item) =>
-              item.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              item.contact?.toString().includes(searchTerm) ||
-              item.address?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              item.category?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              (item.designation &&
-                item.designation
-                  .toLowerCase()
-                  .includes(searchTerm.toLowerCase())) ||
-              (item.incharge &&
-                item.incharge
-                  .toLowerCase()
-                  .includes(searchTerm.toLowerCase())) ||
-              (item.taluka &&
-                item.taluka.toLowerCase().includes(searchTerm.toLowerCase())) ||
-              (item.hospital &&
-                item.hospital.toLowerCase().includes(searchTerm.toLowerCase()))
-          );
+            const electricity = [
+                {
+                    sr: 1,
+                    name: "महावितरण कार्यालय, मुरुड",
+                    contact: "02144-274125",
+                    address: "महावितरण उपकेंद्र, मुरुड-जंजीरा, रायगड",
+                },
+                {
+                    sr: 2,
+                    name: "महावितरण कार्यालय, अलिबाग",
+                    contact: "02141-222456",
+                    address: "महावितरण मुख्य कार्यालय, अलिबाग, रायगड",
+                },
+            ];
 
-          searchResultsTitle.textContent = `शोध निकाल: "${searchTerm}"`;
+            const postal = [
+                {
+                    sr: 1,
+                    name: "मुरुड पोस्ट ऑफिस",
+                    contact: "02144-274310",
+                    address: "मुरुड-जंजीरा, रायगड - 402401",
+                },
+                {
+                    sr: 2,
+                    name: "अलिबाग पोस्ट ऑफिस",
+                    contact: "02141-222189",
+                    address: "अलिबाग, रायगड - 402201",
+                },
+            ];
 
-          if (results.length > 0) {
-            searchResultsList.innerHTML = "";
-            results.slice(0, 10).forEach((result, index) => {
-              const resultElement = document.createElement("div");
-              resultElement.className = "contacts-search-result-item";
-              resultElement.innerHTML = `
+            const banks = [
+                {
+                    sr: 1,
+                    name: "स्टेट बँक ऑफ इंडिया",
+                    contact: "02144-274225",
+                    address: "मुरुड-जंजीरा शाखा, रायगड",
+                },
+                {
+                    sr: 2,
+                    name: "बँक ऑफ इंडिया",
+                    contact: "02144-274555",
+                    address: "मुरुड शाखा, रायगड",
+                },
+            ];
+
+            const medicalContacts = [
+                {
+                    sr: 1,
+                    taluka: "मुरुड",
+                    hospital: "उप जिल्हा रुग्णालय, मुरुड",
+                    incharge: "डॉ. प्रभारी",
+                    contact: "02144-274420",
+                },
+                {
+                    sr: 2,
+                    taluka: "अलिबाग",
+                    hospital: "जिल्हा रुग्णालय, अलिबाग",
+                    incharge: "डॉ. प्रभारी",
+                    contact: "02141-222081",
+                },
+            ];
+
+            const oddopGrievanceContacts = [
+                {
+                    srNo: 1,
+                    name: "जिल्हा अधिकारी",
+                    designation: "जिल्हा कलेक्टर",
+                    contact: "02141-222001",
+                },
+                {
+                    srNo: 2,
+                    name: "उप जिल्हा अधिकारी",
+                    designation: "उप जिल्हा कलेक्टर",
+                    contact: "02144-274001",
+                },
+            ];
+
+            // DOM Elements
+            const searchInput = document.getElementById("searchInput");
+            const clearSearch = document.getElementById("clearSearch");
+            const searchResults = document.getElementById("searchResults");
+            const searchResultsList = document.getElementById("searchResultsList");
+            const noResults = document.getElementById("noResults");
+            const noResultsText = document.getElementById("noResultsText");
+            const searchResultsTitle = document.getElementById("searchResultsTitle");
+            const closeResults = document.getElementById("closeResults");
+            const searchContainer = document.getElementById("searchContainer");
+
+            // Combine all data for search
+            const allContacts = [];
+
+            // Add all data arrays with proper categorization
+            colleges.forEach((item) =>
+                allContacts.push({
+                    ...item,
+                    category: "महाविद्यालये",
+                    type: "educational",
+                })
+            );
+            municipalities.forEach((item) =>
+                allContacts.push({
+                    ...item,
+                    category: "नगरपालिका",
+                    type: "government",
+                })
+            );
+            hospitals.forEach((item) =>
+                allContacts.push({ ...item, category: "रुग्णालये", type: "medical" })
+            );
+            electricity.forEach((item) =>
+                allContacts.push({ ...item, category: "वीज", type: "utility" })
+            );
+            postal.forEach((item) =>
+                allContacts.push({ ...item, category: "पोस्ट", type: "government" })
+            );
+            banks.forEach((item) =>
+                allContacts.push({ ...item, category: "बँका", type: "financial" })
+            );
+            medicalContacts.forEach((item) =>
+                allContacts.push({
+                    ...item,
+                    category: "वैद्यकीय संपर्क",
+                    type: "medical",
+                })
+            );
+            oddopGrievanceContacts.forEach((item) =>
+                allContacts.push({
+                    ...item,
+                    category: "ODOP तक्रार",
+                    type: "government",
+                })
+            );
+
+            // Initial render of tables
+            renderTables();
+
+            // Search functionality
+            function handleSearch(e) {
+                const searchTerm = e.target.value;
+
+                if (searchTerm.trim() === "") {
+                    searchResults.style.display = "none";
+                    clearSearch.style.display = "none";
+                    return;
+                }
+
+                clearSearch.style.display = "block";
+
+                const results = allContacts.filter(
+                    (item) =>
+                        item.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        item.contact?.toString().includes(searchTerm) ||
+                        item.address?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        item.category?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        (item.designation &&
+                            item.designation
+                                .toLowerCase()
+                                .includes(searchTerm.toLowerCase())) ||
+                        (item.incharge &&
+                            item.incharge
+                                .toLowerCase()
+                                .includes(searchTerm.toLowerCase())) ||
+                        (item.taluka &&
+                            item.taluka.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                        (item.hospital &&
+                            item.hospital.toLowerCase().includes(searchTerm.toLowerCase()))
+                );
+
+                searchResultsTitle.textContent = `शोध निकाल: "${searchTerm}"`;
+
+                if (results.length > 0) {
+                    searchResultsList.innerHTML = "";
+                    results.slice(0, 10).forEach((result, index) => {
+                        const resultElement = document.createElement("div");
+                        resultElement.className = "contacts-search-result-item";
+                        resultElement.innerHTML = `
                             <div class="contacts-result-content">
                                 <div class="contacts-result-header">
                                     <h6 class="contacts-result-title">${
-                                      result.name ||
-                                      result.hospital ||
-                                      result.taluka
+                                        result.name ||
+                                        result.hospital ||
+                                        result.taluka
                                     }</h6>
                                     <span class="contacts-result-category ${
-                                      result.type
+                                        result.type
                                     }">
                                         ${result.category}
                                     </span>
@@ -1099,538 +593,220 @@
                                     ${result.contact}
                                 </p>
                                 ${
-                                  result.address ||
-                                  result.hospital ||
-                                  result.designation
-                                    ? `<p class="contacts-result-description">
-                                        ${
-                                          result.address ||
-                                          result.hospital ||
-                                          result.designation
-                                        }
-                                    </p>`
-                                    : ""
+                                    result.address ||
+                                    result.hospital ||
+                                    result.designation
+                                        ? `<p class="contacts-result-description">
+                                            ${
+                                                result.address ||
+                                                result.hospital ||
+                                                result.designation
+                                            }
+                                        </p>`
+                                        : ""
                                 }
                             </div>
                             <i class="fas fa-chevron-right contacts-result-arrow"></i>
                         `;
-              resultElement.addEventListener("click", () =>
-                handleResultClick(result)
-              );
-              searchResultsList.appendChild(resultElement);
-            });
-            searchResults.style.display = "block";
-            noResults.style.display = "none";
-          } else {
-            searchResults.style.display = "block";
-            noResults.style.display = "block";
-            noResultsText.textContent = `'${searchTerm}' साठी कोणतेही संपर्क सापडले नाहीत`;
-          }
-        }
-
-        function handleResultClick(result) {
-          searchResults.style.display = "none";
-          searchInput.value = "";
-          clearSearch.style.display = "none";
-
-          // Scroll to the specific section based on category
-          const sectionMap = {
-            महाविद्यालये: "#colleges-section",
-            नगरपालिका: "#municipalities-section",
-            रुग्णालये: "#hospitals-section",
-            वीज: "#electricity-section",
-            पोस्ट: "#postal-section",
-            बँका: "#banks-section",
-            "वैद्यकीय संपर्क": "#medical-contacts-section",
-            "ODOP तक्रार": "#odop-section",
-          };
-
-          const sectionId = sectionMap[result.category];
-          if (sectionId) {
-            const element = document.querySelector(sectionId);
-            if (element) {
-              element.scrollIntoView({ behavior: "smooth" });
+                        resultElement.addEventListener("click", () =>
+                            handleResultClick(result)
+                        );
+                        searchResultsList.appendChild(resultElement);
+                    });
+                    searchResults.style.display = "block";
+                    noResults.style.display = "none";
+                } else {
+                    searchResults.style.display = "block";
+                    noResults.style.display = "block";
+                    noResultsText.textContent = `'${searchTerm}' साठी कोणतेही संपर्क सापडले नाहीत`;
+                }
             }
-          }
+
+            function handleResultClick(result) {
+                searchResults.style.display = "none";
+                searchInput.value = "";
+                clearSearch.style.display = "none";
+
+                // Scroll to the specific section based on category
+                const sectionMap = {
+                    महाविद्यालये: "#colleges-section",
+                    नगरपालिका: "#municipalities-section",
+                    रुग्णालये: "#hospitals-section",
+                    वीज: "#electricity-section",
+                    पोस्ट: "#postal-section",
+                    बँका: "#banks-section",
+                    "वैद्यकीय संपर्क": "#medical-contacts-section",
+                    "ODOP तक्रार": "#odop-section",
+                };
+
+                const sectionId = sectionMap[result.category];
+                if (sectionId) {
+                    const element = document.querySelector(sectionId);
+                    if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                    }
+                }
+            }
+
+            function clearSearchInput() {
+                searchInput.value = "";
+                searchResults.style.display = "none";
+                clearSearch.style.display = "none";
+            }
+
+            function closeResultsPanel() {
+                searchResults.style.display = "none";
+            }
+
+            // Close dropdown when clicking outside
+            function handleClickOutside(event) {
+                if (searchContainer && !searchContainer.contains(event.target)) {
+                    searchResults.style.display = "none";
+                }
+            }
+
+            // Render tables with data
+            function renderTables() {
+                // Colleges table
+                document.getElementById("collegesTable").innerHTML = colleges
+                    .map(
+                        (c) => `
+                            <tr>
+                                <td>${c.sr}</td>
+                                <td>${c.name}</td>
+                                <td>${c.contact}</td>
+                                <td>${c.address}</td>
+                            </tr>
+                        `
+                    )
+                    .join("");
+
+                // Municipalities table
+                document.getElementById("municipalitiesTable").innerHTML =
+                    municipalities
+                        .map(
+                            (m) => `
+                            <tr>
+                                <td>${m.sr}</td>
+                                <td>${m.name}</td>
+                                <td>${m.contact}</td>
+                                <td>${m.address}</td>
+                            </tr>
+                        `
+                        )
+                        .join("");
+
+                // Hospitals table
+                document.getElementById("hospitalsTable").innerHTML = hospitals
+                    .map(
+                        (h) => `
+                            <tr>
+                                <td>${h.sr}</td>
+                                <td>${h.name}</td>
+                                <td>${h.contact}</td>
+                                <td>${h.address}</td>
+                            </tr>
+                        `
+                    )
+                    .join("");
+
+                // Electricity table
+                document.getElementById("electricityTable").innerHTML = electricity
+                    .map(
+                        (e) => `
+                            <tr>
+                                <td>${e.sr}</td>
+                                <td>${e.name}</td>
+                                <td>${e.contact}</td>
+                                <td>${e.address}</td>
+                            </tr>
+                        `
+                    )
+                    .join("");
+
+                // Postal table
+                document.getElementById("postalTable").innerHTML = postal
+                    .map(
+                        (p) => `
+                            <tr>
+                                <td>${p.sr}</td>
+                                <td>${p.name}</td>
+                                <td>${p.contact}</td>
+                                <td>${p.address}</td>
+                            </tr>
+                        `
+                    )
+                    .join("");
+
+                // Banks table
+                document.getElementById("banksTable").innerHTML = banks
+                    .map(
+                        (b) => `
+                            <tr>
+                                <td>${b.sr}</td>
+                                <td>${b.name}</td>
+                                <td>${b.contact}</td>
+                                <td>${b.address}</td>
+                            </tr>
+                        `
+                    )
+                    .join("");
+
+                // Medical contacts table
+                document.getElementById("medicalContactsTable").innerHTML =
+                    medicalContacts
+                        .map(
+                            (m) => `
+                            <tr>
+                                <td>${m.sr}</td>
+                                <td>${m.taluka}</td>
+                                <td>${m.hospital}</td>
+                                <td>${m.incharge}</td>
+                                <td>${m.contact}</td>
+                            </tr>
+                        `
+                        )
+                        .join("");
+
+                // ODOP table
+                document.getElementById("odopTable").innerHTML =
+                    oddopGrievanceContacts
+                        .map(
+                            (o) => `
+                            <tr>
+                                <td>${o.srNo}</td>
+                                <td>${o.name}</td>
+                                <td>${o.designation}</td>
+                                <td>${o.contact}</td>
+                            </tr>
+                        `
+                        )
+                        .join("");
+            }
+
+            // Event listeners
+            searchInput.addEventListener("input", handleSearch);
+            searchInput.addEventListener("focus", function () {
+                if (searchInput.value.trim() !== "") {
+                    searchResults.style.display = "block";
+                }
+            });
+            clearSearch.addEventListener("click", clearSearchInput);
+            closeResults.addEventListener("click", closeResultsPanel);
+            document.addEventListener("mousedown", handleClickOutside);
         }
-
-        function clearSearchInput() {
-          searchInput.value = "";
-          searchResults.style.display = "none";
-          clearSearch.style.display = "none";
-        }
-
-        function closeResultsPanel() {
-          searchResults.style.display = "none";
-        }
-
-        // Close dropdown when clicking outside
-        function handleClickOutside(event) {
-          if (searchContainer && !searchContainer.contains(event.target)) {
-            searchResults.style.display = "none";
-          }
-        }
-
-        // Render tables with data
-        function renderTables() {
-          // Colleges table
-          document.getElementById("collegesTable").innerHTML = colleges
-            .map(
-              (c) => `
-                    <tr>
-                        <td>${c.sr}</td>
-                        <td>${c.name}</td>
-                        <td>${c.contact}</td>
-                        <td>${c.address}</td>
-                    </tr>
-                `
-            )
-            .join("");
-
-          // Municipalities table
-          document.getElementById("municipalitiesTable").innerHTML =
-            municipalities
-              .map(
-                (m) => `
-                    <tr>
-                        <td>${m.sr}</td>
-                        <td>${m.name}</td>
-                        <td>${m.contact}</td>
-                        <td>${m.address}</td>
-                    </tr>
-                `
-              )
-              .join("");
-
-          // Hospitals table
-          document.getElementById("hospitalsTable").innerHTML = hospitals
-            .map(
-              (h) => `
-                    <tr>
-                        <td>${h.sr}</td>
-                        <td>${h.name}</td>
-                        <td>${h.contact}</td>
-                        <td>${h.address}</td>
-                    </tr>
-                `
-            )
-            .join("");
-
-          // Electricity table
-          document.getElementById("electricityTable").innerHTML = electricity
-            .map(
-              (e) => `
-                    <tr>
-                        <td>${e.sr}</td>
-                        <td>${e.name}</td>
-                        <td>${e.contact}</td>
-                        <td>${e.address}</td>
-                    </tr>
-                `
-            )
-            .join("");
-
-          // Postal table
-          document.getElementById("postalTable").innerHTML = postal
-            .map(
-              (p) => `
-                    <tr>
-                        <td>${p.sr}</td>
-                        <td>${p.name}</td>
-                        <td>${p.contact}</td>
-                        <td>${p.address}</td>
-                    </tr>
-                `
-            )
-            .join("");
-
-          // Banks table
-          document.getElementById("banksTable").innerHTML = banks
-            .map(
-              (b) => `
-                    <tr>
-                        <td>${b.sr}</td>
-                        <td>${b.name}</td>
-                        <td>${b.contact}</td>
-                        <td>${b.address}</td>
-                    </tr>
-                `
-            )
-            .join("");
-
-          // Medical contacts table
-          document.getElementById("medicalContactsTable").innerHTML =
-            medicalContacts
-              .map(
-                (m) => `
-                    <tr>
-                        <td>${m.sr}</td>
-                        <td>${m.taluka}</td>
-                        <td>${m.hospital}</td>
-                        <td>${m.incharge}</td>
-                        <td>${m.contact}</td>
-                    </tr>
-                `
-              )
-              .join("");
-
-          // ODOP table
-          document.getElementById("odopTable").innerHTML =
-            oddopGrievanceContacts
-              .map(
-                (o) => `
-                    <tr>
-                        <td>${o.srNo}</td>
-                        <td>${o.name}</td>
-                        <td>${o.designation}</td>
-                        <td>${o.contact}</td>
-                    </tr>
-                `
-              )
-              .join("");
-        }
-
-        // Event listeners
-        searchInput.addEventListener("input", handleSearch);
-        searchInput.addEventListener("focus", function () {
-          if (searchInput.value.trim() !== "") {
-            searchResults.style.display = "block";
-          }
-        });
-        clearSearch.addEventListener("click", clearSearchInput);
-        closeResults.addEventListener("click", closeResultsPanel);
-        document.addEventListener("mousedown", handleClickOutside);
-      });
     </script>
 
-    <!-- Footer -->
-    <footer class="footer pt-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <h5 class="footer-title" data-aos="fade-right">
-              ग्रामपंचायतीची सर्वसाधारण माहिती
-            </h5>
-            <p data-aos="fade-right">
-              ग्रामपंचायतीचे नाव : वडेगाव(स्टेशन) ग्रामपंचायत <br />
-              स्थापना : 02 ऑक्टोबर 1959 <br />
-              Email ID: wadegaon.stegp@rediffmail.com <br />
-              सेन्सस कोड : 549703 <br />
-              तालुक्यापासून अंतर : 10-12 कि.मी. <br />
-              जिल्हा मुख्यालयापासून अंतर : 90 कि.मी.
-            </p>
-
-            <div class="social-links">
-              <a
-                href="https://www.facebook.com/grampanchayt.karyalay.wadegaon.station?rdid=Epd84rOH7LNX90Mh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15okEv1vHe%2F#"
-                target="_blank"
-                class="facebook"
-                data-aos="fade-right"
-                title="Facebook"
-              >
-                <i class="fab fa-facebook-f" data-aos="fade-right"></i>
-              </a>
-              <a
-                href="https://chat.whatsapp.com/CRiDcV6irtIDIGq2S96yHA"
-                target="_blank"
-                class="whatsapp"
-                data-aos="fade-right"
-                title="Whatsapp"
-              >
-                <i class="fab fa-whatsapp" data-aos="fade-right"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/gpwadegaonsta/?igsh=MXJvaXJjNHZ5N2poMw%3D%3D#"
-                target="_blank"
-                class="instagram"
-                data-aos="fade-right"
-                title="Instagram"
-              >
-                <i class="fab fa-instagram" data-aos="fade-right"></i>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                class="youtube"
-                data-aos="fade-right"
-                title="YouTube"
-              >
-                <i class="fab fa-youtube" data-aos="fade-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <h5 class="footer-title" data-aos="fade-right">द्रुत लिंक</h5>
-            <div class="quick-links">
-              <a href="./" data-aos="fade-right"> मुख्य पृष्ठ </a>
-              <a href="./villageinfo.html" data-aos="fade-right">
-                ग्रामपंचायती विषयी
-              </a>
-              <a href="./villageinfo.html" data-aos="fade-right">
-                आर्थिक माहिती
-              </a>
-              <a href="./fifteen.html" data-aos="fade-right"> योजना व कामे </a>
-              <a href="./services.html" data-aos="fade-right"> ऑनलाइन सेवा </a>
-              <a href="./#gallery" data-aos="fade-right"> गॅलरी </a>
-              <a href="./impnumbers.html" data-aos="fade-right"> संपर्क </a>
-              <a href="./sitemap.html" data-aos="fade-right"> 🌐 साईटमॅप </a>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <h5 class="footer-title" data-aos="fade-right">संपर्क</h5>
-            <div class="contact-info">
-              <p data-aos="fade-left">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>
-                  ग्रामपंचायत वडेगाव(स्टेशन),
-                  <br />
-                  ता.अर्जुनी/मोरगाव, जि. गोंदिया,
-                  <br />
-                  पिन. ४४१७०१
-                </span>
-              </p>
-              <p data-aos="fade-left">
-                <i class="fas fa-phone-alt"></i>
-                <span>+९१ 9370694651</span>
-              </p>
-              <p data-aos="fade-left">
-                <i class="fas fa-envelope"></i>
-                <span>wadegaon.stegp@rediffmail.com</span>
-              </p>
-              <p data-aos="fade-left">
-                <i class="fas fa-clock"></i>
-                <span>सोम-शनि: ९:०० AM - ५:०० PM</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Copyright -->
-      <div class="copyright text-center mt-4">
-        <div class="container">
-          <p class="mb-2" data-aos="fade-up">
-            © २०२५ वडेगाव(स्टेशन) ग्रामपंचायत. सर्व हक्क राखीव.
-          </p>
-          <p class="mb-2">
-            <span class="visitor-count">
-              <i class="fas fa-eye me-1"></i>
-              <span id="visitorCounter">१२,८९६</span> भेटी
-            </span>
-          </p>
-          <p class="mb-0">
-            Design & Developed By
-            <a href="#" class="developer-link">KUMIRADI INFOTECH </a>
-            [7507962607]
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Accessibility Button -->
-    <button
-      class="accessibility-btn"
-      onclick="toggleAccessibility()"
-      title="Accessibility Options"
-    >
-      <i class="fas fa-universal-access"></i>
-    </button>
-
-    <!-- Accessibility Panel -->
-    <div id="accessibility-panel">
-      <div class="panel-header">
-        <h6>Accessibility Options</h6>
-        <button class="close-panel" onclick="toggleAccessibility()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="accessibility-option">
-        <button class="font-size-btn" onclick="increaseFontSize()">
-          <i class="fas fa-text-height"></i> Increase Text Size
-        </button>
-      </div>
-      <div class="accessibility-option">
-        <button class="font-size-btn" onclick="decreaseFontSize()">
-          <i class="fas fa-text-width"></i> Decrease Text Size
-        </button>
-      </div>
-      <div class="accessibility-option">
-        <button class="contrast-btn" onclick="toggleHighContrast()">
-          <i class="fas fa-adjust"></i> High Contrast
-        </button>
-      </div>
-      <div class="accessibility-option">
-        <button class="font-size-btn" onclick="readAloud()">
-          <i class="fas fa-volume-up"></i> Read Aloud
-        </button>
-      </div>
-      <div class="accessibility-option">
-        <button class="font-size-btn" onclick="stopReading()">
-          <i class="fas fa-stop"></i> Stop Reading
-        </button>
-      </div>
-      <div class="accessibility-option">
-        <button class="reset-btn" onclick="resetAccessibility()">
-          <i class="fas fa-redo"></i> Reset All
-        </button>
-      </div>
-    </div>
-
-    <!-- Add Required Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script>
-      // Initialize AOS
-      document.addEventListener("DOMContentLoaded", function () {
-        if (typeof AOS !== "undefined") {
-          AOS.init({
-            duration: 1000,
-            once: true,
-            easing: "ease-in-out",
-          });
+    <!-- Google Translate -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'mr', 
+                includedLanguages: 'mr,en,hi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
         }
-      });
-
-      // Accessibility Functions
-      let currentFontSize = 100;
-      let isHighContrast = false;
-      let speech = null;
-
-      function toggleAccessibility() {
-        const panel = document.getElementById("accessibility-panel");
-        if (panel.style.display === "none" || panel.style.display === "") {
-          panel.style.display = "block";
-        } else {
-          panel.style.display = "none";
-        }
-      }
-
-      function increaseFontSize() {
-        currentFontSize += 10;
-        if (currentFontSize > 150) currentFontSize = 150;
-        document.body.style.fontSize = currentFontSize + "%";
-      }
-
-      function decreaseFontSize() {
-        currentFontSize -= 10;
-        if (currentFontSize < 80) currentFontSize = 80;
-        document.body.style.fontSize = currentFontSize + "%";
-      }
-
-      function toggleHighContrast() {
-        isHighContrast = !isHighContrast;
-        if (isHighContrast) {
-          document.body.style.filter = "contrast(150%) brightness(110%)";
-        } else {
-          document.body.style.filter = "none";
-        }
-      }
-
-      function readAloud() {
-        if ("speechSynthesis" in window) {
-          // Stop any ongoing speech
-          window.speechSynthesis.cancel();
-
-          // Get page content (simplified for demo)
-          const content = document.body.innerText;
-
-          // Create and configure speech
-          const utterance = new SpeechSynthesisUtterance(content);
-          utterance.rate = 0.9;
-          utterance.pitch = 1;
-          utterance.volume = 0.8;
-
-          // Speak the text
-          window.speechSynthesis.speak(utterance);
-          speech = utterance;
-        } else {
-          alert("Sorry, your browser does not support text-to-speech.");
-        }
-      }
-
-      function stopReading() {
-        if ("speechSynthesis" in window) {
-          window.speechSynthesis.cancel();
-        }
-      }
-
-      function resetAccessibility() {
-        currentFontSize = 100;
-        isHighContrast = false;
-        document.body.style.fontSize = "100%";
-        document.body.style.filter = "none";
-        document.body.classList.remove("dark-mode");
-        stopReading();
-      }
-
-      // Close panel when clicking outside
-      document.addEventListener("click", function (event) {
-        const panel = document.getElementById("accessibility-panel");
-        const button = document.querySelector(".accessibility-btn");
-
-        if (
-          panel.style.display === "block" &&
-          !panel.contains(event.target) &&
-          !button.contains(event.target)
-        ) {
-          panel.style.display = "none";
-        }
-      });
-
-      // Simple visitor counter
-      let visitorCount = 12896;
-      function updateVisitorCounter() {
-        visitorCount++;
-        document.getElementById("visitorCounter").textContent =
-          visitorCount.toLocaleString("mr-IN");
-      }
-
-      // Update counter on page load
-      updateVisitorCounter();
     </script>
-    <div id="popupOverlay" class="popup-overlay" style="display: none">
-      <div class="popup-content">
-        <button class="close-btn" id="closePopup">&times;</button>
-        <img src="./Img/popup.jpeg" alt="Popup" class="popup-image" />
-      </div>
-    </div>
-
-    <script>
-      // Add this script to each HTML page
-      document.addEventListener("DOMContentLoaded", function () {
-        const popupOverlay = document.getElementById("popupOverlay");
-        const closePopup = document.getElementById("closePopup");
-
-        // Check if page was reloaded or it's first visit
-        const isReloaded = performance.navigation.type === 1;
-        const hasSeenPopup = sessionStorage.getItem("hasSeenPopup");
-
-        // Show popup on first visit OR page reload
-        if (!hasSeenPopup || isReloaded) {
-          popupOverlay.style.display = "flex";
-          sessionStorage.setItem("hasSeenPopup", "true");
-        }
-
-        closePopup.addEventListener("click", function () {
-          popupOverlay.style.display = "none";
-        });
-
-        popupOverlay.addEventListener("click", function (e) {
-          if (e.target === popupOverlay) {
-            popupOverlay.style.display = "none";
-          }
-        });
-
-        // Close with Escape key
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && popupOverlay.style.display === "flex") {
-            popupOverlay.style.display = "none";
-          }
-        });
-      });
-    </script>
-  </body>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
 </html>

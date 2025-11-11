@@ -1,0 +1,468 @@
+        /* Updated Hero Section with Blur Effect */
+.hero-section {
+    position: relative;
+    height: 85vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./Img/slide1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(8px);
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+    background: rgba(26, 35, 126, 0.3); /* Semi-transparent overlay */
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Alternative blur effect - less intense */
+.hero-section.alternative-blur {
+    position: relative;
+    height: 85vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./Img/slide1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+}
+
+.hero-section.alternative-blur::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(4px);
+    z-index: 1;
+}
+
+.hero-section.alternative-blur .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+ /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .facility-card {
+                flex-direction: column;
+            }
+            
+            .facility-image, .facility-content {
+                width: 100%;
+            }
+            
+            .facility-image {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .counter-number {
+                font-size: 2.5rem;
+            }
+            
+            .accessibility-btn {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 18px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .officer-img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+/* Mobile-First Responsive Improvements */
+@media (max-width: 768px) {
+    /* Header improvements */
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .logo-section {
+        flex-direction: column;
+    }
+    
+    .village-name {
+        font-size: 1.5rem;
+    }
+    
+    .header-badges {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    /* Navigation improvements */
+    .navbar-nav .nav-link {
+        padding: 12px 15px !important;
+        text-align: center;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        float: none;
+        width: 100%;
+        margin-top: 0;
+    }
+    
+    /* Hero section */
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* About section */
+    .about-content {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    /* Officers section */
+    .officer-card {
+        margin-bottom: 20px;
+    }
+    
+    /* Counters section */
+    .col-6 {
+        width: 50%;
+    }
+    
+    .counter-number {
+        font-size: 2rem;
+    }
+    
+    .counter-label {
+        font-size: 0.9rem;
+    }
+    
+    /* Facilities section */
+    .facility-card {
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+    
+    .facility-image, 
+    .facility-content {
+        width: 100%;
+    }
+    
+    .facility-image {
+        height: 200px;
+        order: 1;
+    }
+    
+    .facility-content {
+        order: 2;
+    }
+    
+    /* Gallery section */
+    .col-md-3 {
+        width: 50%;
+    }
+    
+    .gallery-item {
+        height: 200px;
+    }
+    
+    /* E-services section */
+    .col-md-2 {
+        width: 33.33%;
+    }
+    
+    .service-card {
+        padding: 20px 10px;
+    }
+    
+    /* Footer */
+    .footer .row > div {
+        margin-bottom: 30px;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    /* Accessibility button */
+    .accessibility-btn {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Extra small devices */
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .col-6, 
+    .col-md-3, 
+    .col-md-2 {
+        width: 100%;
+    }
+    
+    .counter-card,
+    .service-card {
+        margin-bottom: 15px;
+    }
+    
+    .header-badge {
+        font-size: 0.7rem;
+        padding: 6px 10px;
+    }
+    
+    .top-bar .col-md-6 {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    
+    .top-bar .d-flex {
+        justify-content: center;
+    }
+}
+
+.carousel-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.3s ease;
+      }
+
+      .carousel-nav:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .carousel-prev {
+        left: 20px;
+      }
+
+      .carousel-next {
+        right: 20px;
+      }
+
+      .carousel-indicators {
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        z-index: 10;
+      }
+
+      .carousel-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .carousel-indicator.active {
+        background: #ffc107;
+        transform: scale(1.2);
+      }
+
+      .carousel-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.2);
+        z-index: 10;
+      }
+
+      .carousel-progress-bar {
+        height: 100%;
+        width: 0%;
+        background: #ffc107;
+        transition: width 0.1s linear;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .beautiful-carousel {
+          height: 60vh;
+        }
+
+        .caption-title {
+          font-size: 1.8rem;
+        }
+
+        .caption-subtitle {
+          font-size: 1rem;
+        }
+
+        .carousel-nav {
+          width: 40px;
+          height: 40px;
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .beautiful-carousel {
+          height: 50vh;
+        }
+
+        .caption-title {
+          font-size: 1.5rem;
+        }
+
+        .caption-subtitle {
+          font-size: 0.9rem;
+        }
+
+        .btn-explore {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+      }
+
+
+.btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-outline-success {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.btn-outline-success:hover {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Hover effects */
+/* Additional Mobile Optimizations */
+/* Improve touch targets */
+.navbar-toggler,
+.btn,
+.nav-link,
+.dropdown-item,
+.gallery-item,
+.service-card,
+.form-item {
+    min-height: 44px; /* Minimum touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Improve text readability on mobile */
+body {
+    font-size: 16px; /* Prevent zoom on iOS */
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Optimize images for mobile */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Improve form elements for touch */
+.form-control,
+.btn {
+    font-size: 16px; /* Prevent zoom on iOS */
+}
