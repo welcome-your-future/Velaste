@@ -30,11 +30,12 @@ body {
 }
 
 .footer {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   color: white;
   position: relative;
   overflow: hidden;
   margin-top: auto;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .footer::before {
@@ -43,8 +44,8 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, #ff9933, #ffffff, #138808);
+  height: 6px;
+  background: linear-gradient(90deg, #2563eb 0%, #f59e0b 50%, #10b981 100%);
 }
 
 .footer-pattern {
@@ -72,23 +73,25 @@ body {
 }
 
 .footer-title {
-  font-weight: 700;
-  border-bottom: 3px solid var(--secondary);
-  padding-bottom: 12px;
-  margin-bottom: 25px;
+  font-weight: 800;
+  border-bottom: 4px solid #f59e0b;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
   position: relative;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #fff;
+  letter-spacing: -0.3px;
 }
 
 .footer-title::after {
   content: "";
   position: absolute;
-  bottom: -3px;
+  bottom: -4px;
   left: 0;
-  width: 60px;
-  height: 3px;
-  background-color: var(--accent);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #10b981 0%, #2563eb 100%);
+  border-radius: 2px;
 }
 
 .footer-content {
@@ -158,15 +161,17 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   color: white;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   position: relative;
   overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
 }
 
 .social-links a::before {
@@ -178,10 +183,22 @@ body {
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.3) 0%,
     transparent 100%
   );
   border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover::before {
+  transform: scale(1);
+}
+
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .social-links a.facebook {
@@ -208,16 +225,23 @@ body {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  background: linear-gradient(135deg, var(--secondary) 0%, #ff9100 100%);
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
   color: white;
   border: none;
   border-radius: 50px;
-  padding: 14px 22px;
+  padding: 16px 26px;
   z-index: 1000;
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 600;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+  transition: all 0.3s ease;
+}
+
+.accessibility-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.5);
 }
 
 .developer-link {
