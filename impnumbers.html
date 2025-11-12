@@ -2,7 +2,11 @@
 <html lang="mr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#1a5276">
     <title>महत्वाचे नंबर</title>
 
     <link rel="stylesheet" href="./styles/main.css">
@@ -518,12 +522,152 @@
             });
         }
         
-        // Initialize all advanced animations
+        // Initialize all advanced animations (only on desktop)
         setTimeout(() => {
-            addParallaxEffect();
-            addMouseTrackingEffect();
-            addSparkleEffect();
+            if (window.innerWidth > 768) {
+                addParallaxEffect();
+                addMouseTrackingEffect();
+                addSparkleEffect();
+            } else {
+                // Mobile-specific optimizations
+                initMobileOptimizations();
+            }
         }, 1000);
+        
+        // Mobile-specific optimizations
+        function initMobileOptimizations() {
+            // Disable heavy animations on mobile
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile || window.innerWidth <= 768) {
+                // Remove complex animations
+                document.querySelectorAll('section, .table-responsive, .contacts-table tbody tr').forEach(el => {
+                    el.style.animation = 'none';
+                });
+                
+                // Add simple fade-in for sections
+                const sections = document.querySelectorAll('section');
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px'
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+                
+                sections.forEach(section => {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(20px)';
+                    section.style.transition = 'all 0.3s ease';
+                    observer.observe(section);
+                });
+                
+                // Improve touch scrolling
+                document.querySelectorAll('.table-responsive').forEach(table => {
+                    let isScrolling = false;
+                    
+                    table.addEventListener('touchstart', () => {
+                        isScrolling = true;
+                    });
+                    
+                    table.addEventListener('touchend', () => {
+                        setTimeout(() => {
+                            isScrolling = false;
+                        }, 100);
+                    });
+                });
+                
+                // Add swipe indicator for tables
+                addSwipeIndicator();
+            }
+        }
+        
+        // Add swipe indicator for mobile tables
+        function addSwipeIndicator() {
+            const tables = document.querySelectorAll('.table-responsive');
+            
+            tables.forEach(table => {
+                const indicator = document.createElement('div');
+                indicator.className = 'swipe-indicator';
+                indicator.innerHTML = '<i class="fas fa-arrows-alt-h"></i> स्वाइप करा';
+                indicator.style.cssText = `
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background: rgba(26, 82, 118, 0.9);
+                    color: white;
+                    padding: 5px 10px;
+                    border-radius: 20px;
+                    font-size: 11px;
+                    z-index: 10;
+                    pointer-events: none;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                `;
+                
+                table.style.position = 'relative';
+                table.appendChild(indicator);
+                
+                // Show indicator on first touch
+                let hasShownIndicator = false;
+                table.addEventListener('touchstart', () => {
+                    if (!hasShownIndicator && table.scrollWidth > table.clientWidth) {
+                        indicator.style.opacity = '1';
+                        setTimeout(() => {
+                            indicator.style.opacity = '0';
+                        }, 2000);
+                        hasShownIndicator = true;
+                    }
+                });
+            });
+        }
+        
+        // Handle orientation change
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => {
+                window.location.reload();
+            }, 200);
+        });
+        
+        // Prevent zoom on double tap for specific elements
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', (event) => {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+        
+        // Add pull-to-refresh indicator
+        let touchStartY = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        });
+        
+        document.addEventListener('touchmove', (e) => {
+            const touchY = e.touches[0].clientY;
+            const touchDiff = touchY - touchStartY;
+            
+            if (touchDiff > 0 && window.scrollY === 0) {
+                // User is pulling down at top of page
+                document.body.style.transform = `translateY(${Math.min(touchDiff / 3, 50)}px)`;
+            }
+        });
+        
+        document.addEventListener('touchend', () => {
+            document.body.style.transform = '';
+            document.body.style.transition = 'transform 0.3s ease';
+            setTimeout(() => {
+                document.body.style.transition = '';
+            }, 300);
+        });
 
         // Search functionality
         function initializeSearchFunctionality() {
