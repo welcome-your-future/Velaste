@@ -1380,22 +1380,12 @@ section {
   }
 }
 
-/* Spinning Icon Animation */
+/* Search Icon - Static */
 .contacts-search-icon {
-  animation: spinIcon 3s linear infinite;
-}
-
-@keyframes spinIcon {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  transition: color 0.3s ease;
 }
 
 .contacts-search-input:focus ~ .contacts-search-icon {
-  animation: spinIcon 1s linear infinite;
   color: var(--secondary-color);
 }
 
