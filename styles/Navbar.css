@@ -1,25 +1,21 @@
 .top-bar {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  background-color: #0d1140;
   color: white;
-  padding: 10px 0;
+  padding: 4px 0;
   font-size: 14px;
-  border-bottom: 3px solid #f59e0b;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #ffc107;
 }
 
 .top-bar-left {
-  font-weight: 700;
-  letter-spacing: 0.3px;
+  font-weight: 600;
 }
 
 .top-bar i {
-  margin-right: 8px;
-  color: #fbbf24;
-  font-size: 16px;
+  margin-right: 5px;
+  color: #ffd700;
 }
 .top-bar-right {
   flex-wrap: wrap;
-  gap: 15px;
 }
 
 #google_translate_element {
@@ -30,48 +26,24 @@
 
 /* ================= Logo Header ================= */
 .logo-header {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  padding: 20px 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border-bottom: 4px solid #2563eb;
-  position: relative;
-}
-
-.logo-header::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, #2563eb 0%, #f59e0b 50%, #10b981 100%);
+  background-color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  height: 85px;
+  height: 80px;
   width: auto;
   animation: slideInLeft 0.8s ease-in-out;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
-  border: 3px solid #60a5fa;
-  transition: all 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.08) rotate(2deg);
-  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.3);
 }
 
 .marathi-font {
-  font-weight: 900;
-  font-size: 2rem;
-  letter-spacing: -0.5px;
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px #00000033;
   animation: slideInLeft 0.8s ease-in-out;
-  text-shadow: none;
+  color: var(--federal-blue);
 }
 
 @keyframes slideInLeft {
@@ -86,99 +58,51 @@
 }
 
 .nav-bar {
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  background: linear-gradient(90deg, #0d1140, #121a56);
   padding: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  border-bottom: 2px solid #ffc107;
 }
 
 .navbar-nav .nav-link {
   color: white !important;
-  font-weight: 700;
+  font-weight: 500;
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 16px 24px !important;
-  border-radius: 8px;
-  margin: 0 4px;
-  position: relative;
-}
-
-.navbar-nav .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%) scaleX(0);
-  width: 60%;
-  height: 3px;
-  background: linear-gradient(90deg, #f59e0b 0%, #10b981 100%);
-  border-radius: 2px;
   transition: all 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-  background: rgba(255, 255, 255, 0.15);
+  background-color: #171b47;
   color: white !important;
-  transform: translateY(-2px);
-}
-
-.navbar-nav .nav-link:hover::after,
-.navbar-nav .nav-link.active::after {
-  transform: translateX(-50%) scaleX(1);
 }
 
 .navbar-nav .nav-link i {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .dropdown-menu-custom {
-  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 8px;
-  margin: 8px 0;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background-color: #0d1140;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .dropdown-item-custom {
   color: white !important;
   padding: 12px 20px;
-  border-radius: 8px;
-  margin-bottom: 4px;
+  border-bottom: 1px solid #2a3173;
   transition: all 0.3s ease;
   display: block;
   text-decoration: none;
-  font-weight: 600;
-  position: relative;
-  overflow: hidden;
-}
-
-.dropdown-item-custom::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 4px;
-  background: linear-gradient(180deg, #f59e0b 0%, #10b981 100%);
-  transform: scaleY(0);
-  transition: transform 0.3s ease;
 }
 
 .dropdown-item-custom:hover {
-  background: rgba(255, 255, 255, 0.15) !important;
+  background-color: #171b47 !important;
   color: white !important;
-  padding-left: 28px;
-  transform: translateX(4px);
-}
-
-.dropdown-item-custom:hover::before {
-  transform: scaleY(1);
+  padding-left: 25px;
 }
 
 .navbar .dropdown-menu {
