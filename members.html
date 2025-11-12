@@ -160,6 +160,35 @@
                 right: 12px;
             }
         }
+
+        /* Member Photo Styling */
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            object-position: center top;
+            aspect-ratio: 1 / 1;
+            display: block;
+            margin: 0 auto;
+            border: 3px solid #e3f2fd;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .member-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(26, 35, 126, 0.2);
+            border-color: #1a237e;
+        }
+
+        .hover-card {
+            transition: all 0.3s ease;
+        }
+
+        .hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+        }
     </style>
 </head>
 <body>
@@ -447,7 +476,7 @@
                                 <div class="card shadow-sm h-100 border-0 rounded-4 hover-card p-3 text-center" data-aos="fade-left">
                                     <div class="avatar mb-3" data-aos="fade-left">
                                         ${member.photo ? 
-                                            `<img src="${member.photo}" alt="${member.name}" class="img-fluid rounded-circle" style="width: 120px; height: 120px; object-fit: cover;">` : 
+                                            `<img src="${member.photo}" alt="${member.name}" class="img-fluid rounded-circle member-photo" style="width: 120px; height: 120px; object-fit: cover; object-position: center top; aspect-ratio: 1 / 1; display: block; margin: 0 auto;">` : 
                                             `<div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto" style="width: 120px; height: 120px;">
                                                 <i class="fas fa-user-circle text-primary fa-3x"></i>
                                             </div>`
