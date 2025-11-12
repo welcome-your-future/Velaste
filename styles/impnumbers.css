@@ -841,32 +841,395 @@ section h4::before {
   opacity: 0.5;
 }
 
-/* Responsive Box Design */
-@media (max-width: 768px) {
+/* ========== MOBILE RESPONSIVE DESIGN ========== */
+
+/* Tablet Devices */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 15px;
+  }
+  
   section {
-    padding: 20px;
-    border-radius: 15px;
+    padding: 25px 20px;
+    margin-bottom: 30px !important;
+  }
+  
+  section h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
   }
   
   .table-responsive {
     padding: 15px;
-    border-radius: 10px;
+  }
+  
+  .contacts-table th,
+  .contacts-table td {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  /* Disable heavy animations on mobile */
+  * {
+    animation-duration: 0.3s !important;
+  }
+  
+  /* Container adjustments */
+  .container {
+    padding: 0 10px;
+  }
+  
+  /* Section styling */
+  section {
+    padding: 20px 15px;
+    border-radius: 12px;
+    margin-bottom: 25px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  }
+  
+  section::before {
+    width: 4px;
+  }
+  
+  section:hover::before {
+    width: 4px;
   }
   
   section h4 {
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+  
+  section h4::before {
+    left: -10px;
+    width: 6px;
+    height: 6px;
+  }
+  
+  /* Table responsive */
+  .table-responsive {
+    padding: 10px;
+    border-radius: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Table styling */
+  .contacts-table {
+    font-size: 13px;
+    min-width: 100%;
   }
   
   .contacts-table th,
   .contacts-table td {
     padding: 10px 8px;
-    font-size: 13px;
+    font-size: 12px;
+    white-space: nowrap;
   }
   
+  /* Column widths for mobile */
+  .contacts-table th:nth-child(1),
+  .contacts-table td:nth-child(1) {
+    width: 40px;
+    min-width: 40px;
+  }
+  
+  .contacts-table th:nth-child(2),
+  .contacts-table td:nth-child(2) {
+    min-width: 180px;
+    white-space: normal;
+  }
+  
+  .contacts-table th:nth-child(3),
+  .contacts-table td:nth-child(3) {
+    min-width: 120px;
+  }
+  
+  .contacts-table th:nth-child(4),
+  .contacts-table td:nth-child(4) {
+    min-width: 200px;
+    white-space: normal;
+  }
+  
+  /* Remove decorative icons on mobile */
   .contacts-table td:nth-child(2)::before,
   .contacts-table td:nth-child(3)::before,
   .contacts-table td:nth-child(4)::before {
     display: none;
+  }
+  
+  .contacts-table td:nth-child(2) {
+    padding-left: 8px;
+  }
+  
+  /* Simplify hover effects */
+  .contacts-table tbody tr:hover {
+    transform: none;
+    box-shadow: none;
+    background: #f0f7ff;
+  }
+  
+  .contacts-table td:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Search box mobile */
+  .contacts-search-container {
+    margin: 20px 10px;
+    max-width: 100%;
+  }
+  
+  .contacts-search-box {
+    border-radius: 30px;
+  }
+  
+  .contacts-search-input {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+  
+  .contacts-search-input::placeholder {
+    font-size: 13px;
+  }
+  
+  /* Search results mobile */
+  .contacts-search-results-dropdown {
+    border-radius: 8px;
+    margin-top: 8px;
+  }
+  
+  .contacts-search-result-item {
+    padding: 12px 15px;
+  }
+  
+  .contacts-result-title {
+    font-size: 14px;
+  }
+  
+  .contacts-result-contact {
+    font-size: 13px;
+  }
+  
+  .contacts-result-description {
+    font-size: 12px;
+  }
+  
+  /* Scroll to top button */
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+  
+  /* Disable complex animations */
+  section::after,
+  .table-responsive::before,
+  .contacts-table tbody tr::after,
+  .contacts-table td::after {
+    display: none;
+  }
+  
+  /* Simplify backgrounds */
+  section {
+    background: white;
+    animation: none;
+  }
+  
+  .contacts-table tbody tr {
+    background: white;
+    animation: fadeInUp 0.3s ease-out forwards;
+  }
+  
+  .contacts-table tbody tr:nth-child(even) {
+    background: #fafbfc;
+  }
+  
+  /* Remove 3D effects */
+  .table-responsive:hover {
+    transform: none;
+  }
+  
+  /* Subtitle mobile */
+  .section-subtitle {
+    font-size: 20px;
+    padding-left: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .section-subtitle::after {
+    display: none;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  /* Further reduce sizes */
+  section {
+    padding: 15px 10px;
+    border-radius: 10px;
+  }
+  
+  section h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .table-responsive {
+    padding: 8px;
+    border-radius: 8px;
+  }
+  
+  .contacts-table th,
+  .contacts-table td {
+    padding: 8px 6px;
+    font-size: 11px;
+  }
+  
+  .contacts-table th:nth-child(1),
+  .contacts-table td:nth-child(1) {
+    width: 35px;
+    min-width: 35px;
+  }
+  
+  .contacts-table th:nth-child(2),
+  .contacts-table td:nth-child(2) {
+    min-width: 150px;
+  }
+  
+  .contacts-table th:nth-child(3),
+  .contacts-table td:nth-child(3) {
+    min-width: 110px;
+  }
+  
+  .contacts-table th:nth-child(4),
+  .contacts-table td:nth-child(4) {
+    min-width: 180px;
+  }
+  
+  /* Search mobile */
+  .contacts-search-container {
+    margin: 15px 5px;
+  }
+  
+  .contacts-search-input {
+    font-size: 13px;
+  }
+  
+  .contacts-search-input::placeholder {
+    font-size: 12px;
+  }
+  
+  /* Subtitle */
+  .section-subtitle {
+    font-size: 18px;
+    padding-left: 10px;
+  }
+  
+  /* Scroll button */
+  .scroll-to-top {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  /* Simplify all animations */
+  * {
+    animation: none !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  .contacts-table tbody tr {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  section {
+    padding: 15px;
+  }
+  
+  .contacts-table th,
+  .contacts-table td {
+    padding: 8px 6px;
+  }
+  
+  .scroll-to-top {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .contacts-table tbody tr:hover,
+  .contacts-table td:hover,
+  section:hover,
+  .table-responsive:hover {
+    transform: none;
+    box-shadow: none;
+    animation: none;
+  }
+  
+  /* Make touch targets larger */
+  .contacts-table td {
+    padding: 12px 10px;
+  }
+  
+  .scroll-to-top {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Improve tap feedback */
+  .contacts-table tbody tr:active {
+    background: #e3f2fd;
+  }
+  
+  .scroll-to-top:active {
+    transform: scale(0.95);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .contacts-table th,
+  .contacts-table td {
+    border-width: 0.5px;
+  }
+}
+
+/* Print styles */
+@media print {
+  section {
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .contacts-search-container,
+  .scroll-to-top {
+    display: none;
+  }
+  
+  .contacts-table {
+    font-size: 10pt;
+  }
+  
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }
 
@@ -1943,5 +2306,239 @@ section:hover {
   }
   75% {
     transform: translateX(-2px) rotate(-1deg);
+  }
+}
+
+
+/* ========== MOBILE CARD VIEW (Alternative Layout) ========== */
+
+/* Mobile Card Layout for very small screens */
+@media (max-width: 576px) {
+  /* Option to show data as cards instead of table */
+  .table-responsive.card-view {
+    padding: 0;
+  }
+  
+  .table-responsive.card-view .contacts-table thead {
+    display: none;
+  }
+  
+  .table-responsive.card-view .contacts-table,
+  .table-responsive.card-view .contacts-table tbody,
+  .table-responsive.card-view .contacts-table tr {
+    display: block;
+    width: 100%;
+  }
+  
+  .table-responsive.card-view .contacts-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 15px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .table-responsive.card-view .contacts-table td {
+    display: block;
+    width: 100%;
+    text-align: left !important;
+    padding: 8px 0;
+    border: none;
+    white-space: normal;
+  }
+  
+  .table-responsive.card-view .contacts-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--primary-color);
+    display: inline-block;
+    width: 80px;
+    margin-right: 10px;
+  }
+  
+  .table-responsive.card-view .contacts-table td:nth-child(1) {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .table-responsive.card-view .contacts-table td:nth-child(1)::before {
+    content: '📋 क्र. ';
+  }
+  
+  .table-responsive.card-view .contacts-table td:nth-child(2)::before {
+    content: '👤 नाव: ';
+  }
+  
+  .table-responsive.card-view .contacts-table td:nth-child(3)::before {
+    content: '📞 संपर्क: ';
+  }
+  
+  .table-responsive.card-view .contacts-table td:nth-child(4)::before {
+    content: '📍 पत्ता: ';
+  }
+}
+
+/* Swipe Indicator Animation */
+@keyframes swipeHint {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+.swipe-indicator {
+  animation: swipeHint 2s ease-in-out infinite;
+}
+
+/* Mobile Loading Spinner */
+.mobile-loading {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  .mobile-loading {
+    display: block;
+  }
+}
+
+/* Smooth scrolling for mobile */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  body {
+    -webkit-tap-highlight-color: rgba(26, 82, 118, 0.1);
+  }
+}
+
+/* Mobile Table Scroll Shadow */
+@media (max-width: 768px) {
+  .table-responsive {
+    background:
+      linear-gradient(to right, white 30%, rgba(255,255,255,0)),
+      linear-gradient(to right, rgba(255,255,255,0), white 70%) 0 100%,
+      radial-gradient(farthest-side at 0% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)),
+      radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+    background-position: 0 0, 100%, 0 0, 100%;
+    background-attachment: local, local, scroll, scroll;
+  }
+}
+
+/* Mobile Sticky Header */
+@media (max-width: 768px) {
+  .contacts-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+}
+
+/* Mobile Touch Feedback */
+@media (max-width: 768px) {
+  .contacts-table tbody tr:active {
+    background: linear-gradient(to right, #e3f2fd, #f0f7ff);
+    transform: scale(0.98);
+  }
+  
+  .scroll-to-top:active {
+    transform: scale(0.9);
+    background: var(--secondary-color);
+  }
+  
+  .contacts-search-box:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Mobile Safe Area (for notched devices) */
+@supports (padding: max(0px)) {
+  @media (max-width: 768px) {
+    .container {
+      padding-left: max(10px, env(safe-area-inset-left));
+      padding-right: max(10px, env(safe-area-inset-right));
+    }
+    
+    .scroll-to-top {
+      bottom: max(20px, env(safe-area-inset-bottom));
+      right: max(20px, env(safe-area-inset-right));
+    }
+  }
+}
+
+/* Mobile Dark Mode Support */
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+  section {
+    background: #1a1a1a;
+    color: #e0e0e0;
+    border-color: #333;
+  }
+  
+  .contacts-table {
+    background: #1a1a1a;
+    color: #e0e0e0;
+  }
+  
+  .contacts-table tbody tr:nth-child(even) {
+    background: #222;
+  }
+  
+  .contacts-table tbody tr:nth-child(odd) {
+    background: #1a1a1a;
+  }
+  
+  .contacts-table td {
+    border-color: #333;
+  }
+  
+  .contacts-search-box {
+    background: #2a2a2a;
+    color: #e0e0e0;
+  }
+  
+  .contacts-search-input {
+    color: #e0e0e0;
+  }
+}
+
+/* Reduce Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile Performance Optimization */
+@media (max-width: 768px) {
+  * {
+    will-change: auto !important;
+  }
+  
+  .contacts-table tbody tr {
+    contain: layout style paint;
+  }
+  
+  section {
+    contain: layout style;
   }
 }
