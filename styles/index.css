@@ -392,9 +392,12 @@ a {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: center top;
     margin: 0 auto 20px;
     border: 5px solid var(--light);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: block;
+    aspect-ratio: 1 / 1;
 }
 
 .officer-name {
