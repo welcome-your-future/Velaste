@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles/search.css">
     <link rel="stylesheet" href="styles/Navbar.css">
     <link rel="stylesheet" href="styles/PopupLogo.css">
+    
 
     <link rel="icon" type="image/x-icon" href="./Img/main_logo.jpeg">
     
@@ -58,6 +59,106 @@
                 padding-left: 30px;
             }
         }
+
+        /* Enhanced Search Bar Styles */
+        .search-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .member-search-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: white;
+            border: 3px solid #1a237e;
+            border-radius: 50px;
+            padding: 15px 25px;
+            box-shadow: 0 5px 20px rgba(26, 35, 126, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .member-search-wrapper:focus-within {
+            border-color: #534bae;
+            box-shadow: 0 8px 30px rgba(26, 35, 126, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .member-search-icon {
+            font-size: 1.4rem;
+            color: #1a237e;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .member-search-wrapper:focus-within .member-search-icon {
+            color: #534bae;
+            transform: scale(1.1);
+        }
+
+        .member-search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 1.1rem;
+            color: #333;
+            background: transparent;
+            font-weight: 500;
+        }
+
+        .member-search-input::placeholder {
+            color: #757575;
+            font-weight: 400;
+        }
+
+        .member-search-clear {
+            position: absolute;
+            right: 15px;
+            background: #f0f0f0;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            padding: 0;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .member-search-clear:hover {
+            background: #ff6f00;
+            color: white;
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .member-search-clear i {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .member-search-wrapper {
+                padding: 12px 20px;
+            }
+
+            .member-search-icon {
+                font-size: 1.2rem;
+                margin-right: 12px;
+            }
+
+            .member-search-input {
+                font-size: 1rem;
+            }
+
+            .member-search-clear {
+                width: 32px;
+                height: 32px;
+                right: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -66,23 +167,25 @@
 
     <!-- Main Content Area -->
     <div class="container mt-5">
-        <!-- Search Bar -->
-        <div class="row mb-4">
+        <!-- Enhanced Search Bar -->
+        <div class="row mb-5">
             <div class="col-12">
-                <div class="search-container" data-aos="fade-up">
-                    <div class="member-search-wrapper position-relative">
+                <div class="search-container" data-aos="fade-down" data-aos-duration="800">
+                    <div class="member-search-wrapper">
                         <i class="fas fa-search member-search-icon"></i>
                         <input
                             type="text"
                             class="member-search-input"
                             id="searchInput"
                             placeholder="नाव किंवा पदनामानुसार शोधा..."
+                            autocomplete="off"
                         />
                         <button
-                            class="btn btn-link member-search-clear position-absolute end-0"
+                            class="member-search-clear"
                             id="clearSearch"
                             type="button"
                             style="display: none"
+                            aria-label="Clear search"
                         >
                             <i class="fas fa-times"></i>
                         </button>
@@ -221,65 +324,58 @@
             const villageEmployees = [
                 {
                     id: 1,
-                    name: "श्री.अलंकार धुमाळ",
+                    name: "श्री सागर कृष्णा मालजी",
                     position: "ग्रामपंचायत अधिकारी",
-                    contact: "--",
+                    contact: "9309917725",
                     photo: "./Img/no-picture-available-icon-20.jpg",
                 },
                 {
                     id: 2,
-                    name: "सौ.कल्पना अंकुश पवार",
+                    name: "सौ.शनिता शरद खेडेकर",
                     position: "सरपंच",
-                    contact: "8261857122",
+                    contact: "9579166645",
                     photo: "./Img/सरपंच.jpg",
                 },
                 {
                     id: 3,
-                    name: "श्री.निलेश हरिश्चंद्र तांबडकर",
+                    name: "श्री.मिलिंद मंगेश खेडेकर",
                     position: "उपसरपंच",
-                    contact: "9271484151",
+                    contact: "9226234813",
                     photo: "./Img/upsrp.jpg",
                 },
                 {
                     id: 4,
-                    name: "श्री.परशुराम नथुराम वाघमारे",
+                    name: "श्री.विकास भिकु दिवेकर",
                     position: "सदस्य नंबर 1",
-                    contact: "9545670836",
+                    contact: "9221540193",
                     photo: "./Img/no-picture-available-icon-20.jpg",
                 },
                 {
                     id: 5,
-                    name: "सौ.रुपाली रमेश वाघमारे",
+                    name: "सौ.चंद्रभागा काशीनाथ वाघामरे",
                     position: "सदस्य नंबर 2",
-                    contact: "--",
+                    contact: "7823089678",
                     photo: "./Img/no-picture-available-icon-20.jpg",
                 },
                 {
                     id: 6,
-                    name: "कमल विठ्ठल वारगे",
+                    name: "सौ.प्रियंका प्रकाश पारदले",
                     position: "सदस्य नंबर 3",
-                    contact: "--",
+                    contact: "9022793071",
                     photo: "./Img/no-picture-available-icon-20.jpg",
                 },
                 {
                     id: 7,
-                    name: "सौ.अनिता कृष्णा वारगे",
+                    name: "सौ.क्रांती कल्पेश राणे",
                     position: "सदस्य नंबर 4",
-                    contact: "--",
+                    contact: "7620723865",
                     photo: "./Img/no-picture-available-icon-20.jpg",
                 },
                 {
                     id: 8,
-                    name: "सौ.वसुंधरा काशिनाथ करमरकर",
+                    name: "सौ.भूमिका भगवान शिंदे",
                     position: "सदस्य नंबर 5",
-                    contact: "--",
-                    photo: "./Img/no-picture-available-icon-20.jpg",
-                },
-                {
-                    id: 9,
-                    name: "सौ.हर्षला हरिदास शिंदे",
-                    position: "सदस्य नंबर 6",
-                    contact: "--",
+                    contact: "9373303116",
                     photo: "./Img/no-picture-available-icon-20.jpg",
                 },
             ];

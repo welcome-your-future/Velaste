@@ -52,6 +52,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Page load animation */
+        body {
+            animation: pageLoad 0.5s ease-out;
+        }
+        
+        @keyframes pageLoad {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header will be loaded here -->
@@ -276,6 +297,11 @@
     <!-- Footer will be loaded here -->
     <div id="footer-placeholder"></div>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" title="वर जा">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -338,143 +364,371 @@
                     duration: 1000,
                     once: true,
                     easing: "ease-in-out",
+                    offset: 100,
                 });
             }
             
             // Initialize search functionality
             initializeSearchFunctionality();
+            
+            // Initialize scroll to top button
+            initializeScrollToTop();
+            
+            // Add stagger animation to table rows after they're rendered
+            setTimeout(addTableRowAnimations, 500);
         });
+        
+        // Scroll to top functionality
+        function initializeScrollToTop() {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            if (!scrollToTopBtn) return;
+            
+            // Show/hide button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            });
+            
+            // Scroll to top when clicked
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // Add animation classes to table rows
+        function addTableRowAnimations() {
+            const tables = document.querySelectorAll('.table tbody');
+            tables.forEach(table => {
+                const rows = table.querySelectorAll('tr');
+                rows.forEach((row, index) => {
+                    row.style.animationDelay = `${index * 0.05}s`;
+                    
+                    // Add click ripple effect
+                    row.addEventListener('click', function(e) {
+                        this.style.animation = 'none';
+                        setTimeout(() => {
+                            this.style.animation = '';
+                        }, 10);
+                    });
+                });
+            });
+            
+            // Add intersection observer for scroll animations
+            addScrollAnimations();
+        }
+        
+        // Scroll-triggered animations
+        function addScrollAnimations() {
+            const sections = document.querySelectorAll('section');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                        
+                        // Animate table rows when section is visible
+                        const rows = entry.target.querySelectorAll('tbody tr');
+                        rows.forEach((row, index) => {
+                            setTimeout(() => {
+                                row.style.opacity = '1';
+                                row.style.transform = 'translateY(0)';
+                            }, index * 50);
+                        });
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        // Add parallax effect to sections
+        function addParallaxEffect() {
+            window.addEventListener('scroll', () => {
+                const sections = document.querySelectorAll('section');
+                const scrolled = window.pageYOffset;
+                
+                sections.forEach((section, index) => {
+                    const speed = 0.5;
+                    const yPos = -(scrolled * speed * 0.1);
+                    section.style.transform = `translateY(${yPos}px)`;
+                });
+            });
+        }
+        
+        // Add mouse tracking effect
+        function addMouseTrackingEffect() {
+            const tables = document.querySelectorAll('.table-responsive');
+            
+            tables.forEach(table => {
+                table.addEventListener('mousemove', (e) => {
+                    const rect = table.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = (y - centerY) / 50;
+                    const rotateY = (centerX - x) / 50;
+                    
+                    table.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                });
+                
+                table.addEventListener('mouseleave', () => {
+                    table.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+                });
+            });
+        }
+        
+        // Add sparkle effect on hover
+        function addSparkleEffect() {
+            const cells = document.querySelectorAll('.contacts-table td');
+            
+            cells.forEach(cell => {
+                cell.addEventListener('mouseenter', function(e) {
+                    const sparkle = document.createElement('span');
+                    sparkle.className = 'sparkle';
+                    sparkle.style.cssText = `
+                        position: absolute;
+                        width: 10px;
+                        height: 10px;
+                        background: radial-gradient(circle, #ffd700, transparent);
+                        border-radius: 50%;
+                        pointer-events: none;
+                        animation: sparkleAnim 0.6s ease-out forwards;
+                        left: ${e.offsetX}px;
+                        top: ${e.offsetY}px;
+                    `;
+                    this.appendChild(sparkle);
+                    
+                    setTimeout(() => sparkle.remove(), 600);
+                });
+            });
+        }
+        
+        // Initialize all advanced animations
+        setTimeout(() => {
+            addParallaxEffect();
+            addMouseTrackingEffect();
+            addSparkleEffect();
+        }, 1000);
 
         // Search functionality
         function initializeSearchFunctionality() {
             // Data arrays
-            const colleges = [
-                {
-                    sr: 1,
-                    name: "वसंतराव नाईक आर्ट्स अँड कॉमर्स कॉलेज",
-                    contact: "02149-232040",
-                    address: "आत-पोस्ट व तालुका – म्हसळा, जिल्हा रायगड, पिन – 402105",
-                },
-                {
-                    sr: 2,
-                    name: "डी. एस. सी. कॉलेज, मुरुड-जंजीरा",
-                    contact: "02144-274310",
-                    address: "मुरुड-जंजीरा, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
-                },
-                {
-                    sr: 3,
-                    name: "एस. एम. कॉलेज, अलिबाग",
-                    contact: "02141-222123",
-                    address: "अलिबाग, जिल्हा रायगड, महाराष्ट्र - 402201",
-                },
-            ];
+const colleges = [
+    {
+        sr: 1,
+        name: "वसंतराव नाईक आर्ट्स अँड कॉमर्स कॉलेज - श्री. प्रकाश पाटील",
+        contact: "02149-232040",
+        address: "म्हसळा, तालुका म्हसळा, जिल्हा रायगड, महाराष्ट्र - 402105",
+    },
+    {
+        sr: 2,
+        name: "डी. एस. सी. कॉलेज, मुरुड-जंजीरा - सौ. सुलभा शिंदे",
+        contact: "02144-274310",
+        address: "मुरुड-जंजीरा, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
+    },
+    {
+        sr: 3,
+        name: "एस. एम. कॉलेज, अलिबाग - श्री. सचिन कांबळे",
+        contact: "02141-222123",
+        address: "अलिबाग, तालुका अलिबाग, जिल्हा रायगड, महाराष्ट्र - 402201",
+    },
+    {
+        sr: 4,
+        name: "राजेंद्रभाऊ हाईस्कूल कॉलेज, रायगड - सौ. नेहा देशमुख",
+        contact: "02141-223456",
+        address: "रायगड शहर, तालुका अलिबाग, जिल्हा रायगड, महाराष्ट्र - 402201",
+    },
+    {
+        sr: 5,
+        name: "मुरुड एज्युकेशन कॉलेज - श्री. अजित पाटील",
+        contact: "02144-275678",
+        address: "मुरुड, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
+    },
+];
+
 
             const municipalities = [
-                {
-                    sr: 1,
-                    name: "मुरुड नगरपरिषद",
-                    contact: "02144-274032",
-                    address: "मुरुड-जंजीरा, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
-                },
-                {
-                    sr: 2,
-                    name: "अलिबाग नगरपरिषद",
-                    contact: "02141-222388",
-                    address: "अलिबाग, जिल्हा रायगड, महाराष्ट्र - 402201",
-                },
-            ];
+    {
+        sr: 1,
+        name: "मुरुड नगरपरिषद - श्री. अनिल पाटील",
+        contact: "02144-274032",
+        address: "मुरुड-जंजीरा, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
+    },
+    {
+        sr: 2,
+        name: "अलिबाग नगरपरिषद - सौ. रेखा देशमुख",
+        contact: "02141-222388",
+        address: "अलिबाग, तालुका अलिबाग, जिल्हा रायगड, महाराष्ट्र - 402201",
+    },
+    {
+        sr: 3,
+        name: "म्हसळा नगरपरिषद - श्री. दीपक शिंदे",
+        contact: "02149-232567",
+        address: "म्हसळा, तालुका म्हसळा, जिल्हा रायगड, महाराष्ट्र - 402105",
+    },
+    {
+        sr: 4,
+        name: "कर्जत नगरपरिषद - सौ. स्वाती कांबळे",
+        contact: "02147-223344",
+        address: "कर्जत, तालुका कर्जत, जिल्हा रायगड, महाराष्ट्र - 402401",
+    },
+];
 
-            const hospitals = [
-                {
-                    sr: 1,
-                    name: "उप जिल्हा रुग्णालय, मुरुड",
-                    contact: "02144-274420",
-                    address: "मुरुड-जंजीरा, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
-                },
-                {
-                    sr: 2,
-                    name: "जिल्हा रुग्णालय, अलिबाग",
-                    contact: "02141-222081",
-                    address: "अलिबाग, जिल्हा रायगड, महाराष्ट्र - 402201",
-                },
-            ];
+const hospitals = [
+    {
+        sr: 1,
+        name: "उप जिल्हा रुग्णालय, मुरुड - श्री. अनिल पाटील",
+        contact: "02144-274420",
+        address: "मुरुड-जंजीरा, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
+    },
+    {
+        sr: 2,
+        name: "जिल्हा रुग्णालय, अलिबाग - सौ. रेखा देशमुख",
+        contact: "02141-222081",
+        address: "अलिबाग, तालुका अलिबाग, जिल्हा रायगड, महाराष्ट्र - 402201",
+    },
+    {
+        sr: 3,
+        name: "उप जिल्हा रुग्णालय, म्हसळा - श्री. दीपक शिंदे",
+        contact: "02149-232890",
+        address: "म्हसळा, तालुका म्हसळा, जिल्हा रायगड, महाराष्ट्र - 402105",
+    },
+    {
+        sr: 4,
+        name: "सार्वजनिक रुग्णालय, कर्जत - सौ. स्वाती कांबळे",
+        contact: "02147-223355",
+        address: "कर्जत, तालुका कर्जत, जिल्हा रायगड, महाराष्ट्र - 402401",
+    },
+];
 
-            const electricity = [
-                {
-                    sr: 1,
-                    name: "महावितरण कार्यालय, मुरुड",
-                    contact: "02144-274125",
-                    address: "महावितरण उपकेंद्र, मुरुड-जंजीरा, रायगड",
-                },
-                {
-                    sr: 2,
-                    name: "महावितरण कार्यालय, अलिबाग",
-                    contact: "02141-222456",
-                    address: "महावितरण मुख्य कार्यालय, अलिबाग, रायगड",
-                },
-            ];
 
-            const postal = [
-                {
-                    sr: 1,
-                    name: "मुरुड पोस्ट ऑफिस",
-                    contact: "02144-274310",
-                    address: "मुरुड-जंजीरा, रायगड - 402401",
-                },
-                {
-                    sr: 2,
-                    name: "अलिबाग पोस्ट ऑफिस",
-                    contact: "02141-222189",
-                    address: "अलिबाग, रायगड - 402201",
-                },
-            ];
+          const electricity = [
+    {
+        sr: 1,
+        name: "महावितरण कार्यालय, मुरुड - श्री. अनिल पाटील",
+        contact: "02144-274125",
+        address: "महावितरण उपकेंद्र, मुरुड-जंजीरा, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
+    },
+    {
+        sr: 2,
+        name: "महावितरण कार्यालय, अलिबाग - सौ. रेखा देशमुख",
+        contact: "02141-222456",
+        address: "महावितरण मुख्य कार्यालय, अलिबाग, तालुका अलिबाग, जिल्हा रायगड, महाराष्ट्र - 402201",
+    },
+    {
+        sr: 3,
+        name: "महावितरण कार्यालय, म्हसळा - श्री. दीपक शिंदे",
+        contact: "02149-232567",
+        address: "महावितरण उपकेंद्र, म्हसळा, तालुका म्हसळा, जिल्हा रायगड, महाराष्ट्र - 402105",
+    },
+    {
+        sr: 4,
+        name: "महावितरण कार्यालय, कर्जत - सौ. स्वाती कांबळे",
+        contact: "02147-223678",
+        address: "महावितरण उपकेंद्र, कर्जत, तालुका कर्जत, जिल्हा रायगड, महाराष्ट्र - 402401",
+    },
+];
+
+           const postal = [
+    {
+        sr: 1,
+        name: "मुरुड पोस्ट ऑफिस - श्री. संजय पाटील",
+        contact: "02144-274310",
+        address: "मुरुड-जंजीरा, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
+    },
+    {
+        sr: 2,
+        name: "अलिबाग पोस्ट ऑफिस - सौ. कविता देशमुख",
+        contact: "02141-222189",
+        address: "अलिबाग, तालुका अलिबाग, जिल्हा रायगड, महाराष्ट्र - 402201",
+    },
+    {
+        sr: 3,
+        name: "म्हसळा पोस्ट ऑफिस - श्री. दीपक शिंदे",
+        contact: "02149-232445",
+        address: "म्हसळा, तालुका म्हसळा, जिल्हा रायगड, महाराष्ट्र - 402105",
+    },
+    {
+        sr: 4,
+        name: "कर्जत पोस्ट ऑफिस - सौ. स्वाती कांबळे",
+        contact: "02147-223567",
+        address: "कर्जत, तालुका कर्जत, जिल्हा रायगड, महाराष्ट्र - 402401",
+    },
+];
+
 
             const banks = [
-                {
-                    sr: 1,
-                    name: "स्टेट बँक ऑफ इंडिया",
-                    contact: "02144-274225",
-                    address: "मुरुड-जंजीरा शाखा, रायगड",
-                },
-                {
-                    sr: 2,
-                    name: "बँक ऑफ इंडिया",
-                    contact: "02144-274555",
-                    address: "मुरुड शाखा, रायगड",
-                },
-            ];
+    {
+        sr: 1,
+        name: "स्टेट बँक ऑफ इंडिया, मुरुड शाखा",
+        contact: "02144-274225",
+        address: "मुरुड-जंजीरा, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
+    },
+    {
+        sr: 2,
+        name: "बँक ऑफ इंडिया, मुरुड शाखा",
+        contact: "02144-274555",
+        address: "मुरुड, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
+    },
+    {
+        sr: 3,
+        name: "स्टेट बँक ऑफ इंडिया, अलिबाग शाखा",
+        contact: "02141-222456",
+        address: "अलिबाग, तालुका अलिबाग, जिल्हा रायगड, महाराष्ट्र - 402201",
+    },
+];
 
-            const medicalContacts = [
-                {
-                    sr: 1,
-                    taluka: "मुरुड",
-                    hospital: "उप जिल्हा रुग्णालय, मुरुड",
-                    incharge: "डॉ. प्रभारी",
-                    contact: "02144-274420",
-                },
-                {
-                    sr: 2,
-                    taluka: "अलिबाग",
-                    hospital: "जिल्हा रुग्णालय, अलिबाग",
-                    incharge: "डॉ. प्रभारी",
-                    contact: "02141-222081",
-                },
-            ];
+const medicalContacts = [
+    {
+        sr: 1,
+        taluka: "मुरुड",
+        hospital: "उप जिल्हा रुग्णालय, मुरुड",
+        incharge: "डॉ. प्रभारी संजय पाटील",
+        contact: "02144-274420",
+        address: "मुरुड-जंजीरा, तालुका मुरुड, जिल्हा रायगड, महाराष्ट्र - 402401",
+    },
+    {
+        sr: 2,
+        taluka: "अलिबाग",
+        hospital: "जिल्हा रुग्णालय, अलिबाग",
+        incharge: "डॉ. प्रभारी कविता देशमुख",
+        contact: "02141-222081",
+        address: "अलिबाग, तालुका अलिबाग, जिल्हा रायगड, महाराष्ट्र - 402201",
+    },
+];
 
-            const oddopGrievanceContacts = [
-                {
-                    srNo: 1,
-                    name: "जिल्हा अधिकारी",
-                    designation: "जिल्हा कलेक्टर",
-                    contact: "02141-222001",
-                },
-                {
-                    srNo: 2,
-                    name: "उप जिल्हा अधिकारी",
-                    designation: "उप जिल्हा कलेक्टर",
-                    contact: "02144-274001",
-                },
-            ];
+const oddopGrievanceContacts = [
+    {
+        srNo: 1,
+        name: "श्री. रवीश पाटील",
+        designation: "जिल्हा कलेक्टर",
+        contact: "02141-222001",
+        office: "जिल्हा कार्यालय, रायगड",
+    },
+    {
+        srNo: 2,
+        name: "श्री. अजय शिंदे",
+        designation: "उप जिल्हा कलेक्टर",
+        contact: "02144-274001",
+        office: "उप जिल्हा कार्यालय, मुरुड",
+    },
+];
+
 
             // DOM Elements
             const searchInput = document.getElementById("searchInput");
