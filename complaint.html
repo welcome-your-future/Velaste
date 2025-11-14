@@ -197,6 +197,7 @@
     </main>
 
     <!-- Footer will be loaded here -->
+    <hr class="footer-divider" style="border: 0; height: 2px; background: linear-gradient(to right, transparent, #1a237e, transparent); margin: 50px 0 0 0;">
     <div id="footer-placeholder"></div>
 
     <!-- Scripts -->
@@ -245,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Load header and footer
     loadComponent('header-placeholder', 'Includes/header.html');
-    loadComponent('footer-placeholder', 'Includes/footer.html');
+    loadComponent('footer-placeholder', 'footer.html');
     
     // Initialize AOS for main content
     if (typeof AOS !== 'undefined') {
